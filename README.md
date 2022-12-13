@@ -2,7 +2,7 @@
 
 Play and manage local media and streams
 
-<a href='https://alfred.app/workflows/vitor/watch-list'>⤓ Install From the Alfred Gallery</a>
+<a href='https://alfred.app/workflows/vitor/watch-list'>⤓ Install on the Alfred Gallery</a>
 
 ## Usage
 
@@ -15,7 +15,7 @@ Search through and play items from your list via the Play Keyword (default: `wlp
 ![Showing items to play](Workflow/images/about/wlp.png)
 
 * <kbd>⏎</kbd>: Play.
-* <kbd>⌃</kbd><kbd>⏎</kbd> Open the item’s URL in a web browser.
+* <kbd>⌃</kbd><kbd>⏎</kbd>: Open the item’s URL in a web browser.
 * <kbd>⌥</kbd><kbd>⏎</kbd>:
     * series: Rescan folder for audiovisual files.
     * stream: Download. Requires [Download Media](https://alfred.app/workflows/vitor/download-media/).
