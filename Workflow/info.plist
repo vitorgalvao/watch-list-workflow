@@ -1,0 +1,1780 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vitorgalvao.alfred.watchlist</string>
+	<key>connections</key>
+	<dict>
+		<key>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>28F2E2F9-493C-4450-B7F2-7B89896713E6</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6393BD32-E835-4C08-BB48-E69D674DB1C7</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>2D2C4B1F-AD23-4F61-A7B2-2122216F9F0F</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>35496472-08A5-4D85-9E98-65CD6118B500</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>28F2E2F9-493C-4450-B7F2-7B89896713E6</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>85CCD3E0-A007-47A2-84BD-9B18C3D5B2AD</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3B8DC012-8D13-4919-8EB0-AC42C883527E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>082FCE19-5B3C-454B-80ED-839DD28766F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Do not move paths</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>3EAD019C-8C8C-4EFB-84F6-EE99B2242EDA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35496472-08A5-4D85-9E98-65CD6118B500</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>5311DD4E-D8CA-4897-AC1E-B64447F32339</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>6393BD32-E835-4C08-BB48-E69D674DB1C7</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D1B310EB-14FF-4B99-80D8-1AA17903B526</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>EED64F19-BE23-4767-8EEB-AB7DA5278BFC</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>63FBFF0E-05C5-47D2-9951-CB86E114264B</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>082FCE19-5B3C-454B-80ED-839DD28766F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>68BC0595-725B-4DDD-B33F-01C3DE55A709</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D39E405-629C-4741-BBA3-D87CFC3D419A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>73EAEC22-6299-43A9-AE36-EF1EFD164D0E</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Add full playlist to play from stream</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>79817F29-F5D9-400C-9C2E-3289466CAD05</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>35496472-08A5-4D85-9E98-65CD6118B500</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>082FCE19-5B3C-454B-80ED-839DD28766F3</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</key>
+		<array/>
+		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
+		<array/>
+		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>7D4A7E97-3F90-4338-95E4-1F539C166F42</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>sourceoutputuid</key>
+				<string>_button1</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D27FE458-78D9-4C16-BF89-7E489D839F6D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>26626E87-515C-4312-87F7-4F604EBBF2F9</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>D75377F6-6B47-4683-B400-224620A75802</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>9537F6F1-6608-4671-BE03-A3DCD23A06DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>824AADC5-ECD6-4B9A-B01B-901EE6EC2552</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>C929975A-3B90-474A-BA08-595EAB51A9B2</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Mark as watched without playing</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>D27FE458-78D9-4C16-BF89-7E489D839F6D</string>
+				<key>modifiers</key>
+				<integer>524288</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>1A72974B-3830-4919-A743-5EDC252A6417</string>
+				<key>modifiers</key>
+				<integer>131072</integer>
+				<key>modifiersubtext</key>
+				<string>Add to quick playlist</string>
+				<key>vitoclose</key>
+				<true/>
+			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
+				<key>modifiers</key>
+				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>D75377F6-6B47-4683-B400-224620A75802</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Play and manage local media and streams</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Watch List</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+paths = ENV['added_item_order'] == 'append' ? ARGV.sort : ARGV.sort.reverse
+move_paths = ENV['do_not_move'] == 'true' ? false : true
+paths.each { |path| add_local_to_watchlist(path, random_hex, move_paths) }</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>082FCE19-5B3C-454B-80ED-839DD28766F3</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>1</integer>
+				<key>filetypes</key>
+				<array>
+					<string>+public.audiovisual-content</string>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Add to Watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>3B8DC012-8D13-4919-8EB0-AC42C883527E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_file_to_watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>63FBFF0E-05C5-47D2-9951-CB86E114264B</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<true/>
+				<key>variables</key>
+				<dict>
+					<key>do_not_move</key>
+					<string>true</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_file_to_watchlist_no_moving</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>5311DD4E-D8CA-4897-AC1E-B64447F32339</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+add_url_to_watchlist(ARGV[0].strip)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<false/>
+				<key>acceptsurls</key>
+				<true/>
+				<key>name</key>
+				<string>Add to Watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>73EAEC22-6299-43A9-AE36-EF1EFD164D0E</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+add_url_to_watchlist(ARGV[0].strip, true)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsfiles</key>
+				<false/>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>acceptstext</key>
+				<false/>
+				<key>acceptsurls</key>
+				<true/>
+				<key>name</key>
+				<string>Play through Watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.universalaction</string>
+			<key>uid</key>
+			<string>3EAD019C-8C8C-4EFB-84F6-EE99B2242EDA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+id = random_hex
+
+ARGV[0].start_with?('http') ?
+  add_url_to_watchlist(ARGV[0].strip, false, id) :
+  add_local_to_watchlist(ARGV[0], id)
+
+print id</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>35496472-08A5-4D85-9E98-65CD6118B500</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>acceptsmulti</key>
+				<integer>0</integer>
+				<key>filetypes</key>
+				<array>
+					<string>+public.audiovisual-content</string>
+					<string>public.folder</string>
+				</array>
+				<key>name</key>
+				<string>Play through Watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.action</string>
+			<key>uid</key>
+			<string>79817F29-F5D9-400C-9C2E-3289466CAD05</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+id = random_hex
+add_url_to_watchlist(ARGV[0].strip, false, id)
+print id</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>26626E87-515C-4312-87F7-4F604EBBF2F9</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_and_play_stream</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+play(ARGV[0]) unless play_quick_playlist</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>sort_order</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>2D2C4B1F-AD23-4F61-A7B2-2122216F9F0F</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>2</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:play_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait…</string>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+display_towatch(ENV['sort_order'])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Pick an item to play</string>
+				<key>title</key>
+				<string>Play ({var:play_keyword})</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+mark_watched(ARGV[0])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C929975A-3B90-474A-BA08-595EAB51A9B2</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>play_id</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>https://alfred.app/workflows/vitor/download-media/</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>7D4A7E97-3F90-4338-95E4-1F539C166F42</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+id = ARGV[0]
+
+case YAML.load_file(Towatch_list)[id]['type']
+when 'series'
+  update_series(id)
+when 'stream'
+  download_stream(id)
+else
+  abort 'Media type needs to be either "series" or "stream"'
+end</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>D27FE458-78D9-4C16-BF89-7E489D839F6D</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>function status(download_media_installed, download_url) {
+  return JSON.stringify({ alfredworkflow: {
+    variables: { download_media_installed: download_media_installed },
+    arg: download_url
+  }})
+}
+
+function run(argv) {
+  const url = argv[0]
+
+  try {
+    Application("com.runningwithcrayons.Alfred").runTrigger("download_video", { inWorkflow: "com.vitorgalvao.alfred.downloadmedia", withArgument: url })
+    return status(true, url)
+  } catch {
+    return status(false, url)
+  }
+}</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>7</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>28F2E2F9-493C-4450-B7F2-7B89896713E6</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>button1</key>
+				<string>Install From the Alfred Gallery</string>
+				<key>button2</key>
+				<string>Cancel</string>
+				<key>button3</key>
+				<string></string>
+				<key>description</key>
+				<string>The Download Media workflow is required to download video</string>
+				<key>title</key>
+				<string>Download Media Not Installed</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.dialog</string>
+			<key>uid</key>
+			<string>D1B310EB-14FF-4B99-80D8-1AA17903B526</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string>{var:download_media_installed}</string>
+						<key>matchcasesensitive</key>
+						<false/>
+						<key>matchmode</key>
+						<integer>6</integer>
+						<key>matchstring</key>
+						<string></string>
+						<key>outputlabel</key>
+						<string>Missing Download Media</string>
+						<key>uid</key>
+						<string>EED64F19-BE23-4767-8EEB-AB7DA5278BFC</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>6393BD32-E835-4C08-BB48-E69D674DB1C7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>conditions</key>
+				<array>
+					<dict>
+						<key>inputstring</key>
+						<string></string>
+						<key>matchcasesensitive</key>
+						<true/>
+						<key>matchmode</key>
+						<integer>4</integer>
+						<key>matchstring</key>
+						<string>^https?://</string>
+						<key>outputlabel</key>
+						<string>Download URL</string>
+						<key>uid</key>
+						<string>85CCD3E0-A007-47A2-84BD-9B18C3D5B2AD</string>
+					</dict>
+				</array>
+				<key>elselabel</key>
+				<string>else</string>
+				<key>hideelse</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.conditional</string>
+			<key>uid</key>
+			<string>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+add_to_quick_playlist(ARGV[0])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>1A72974B-3830-4919-A743-5EDC252A6417</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>fixedorder</key>
+				<true/>
+				<key>items</key>
+				<string>[{"title":"Best Ratio First","arg":"best_ratio","subtitle":"From biggest file size to duration ratio"},{"title":"Shortest First","arg":"duration_ascending","subtitle":"From shortest duration"},{"title":"Longest First","arg":"duration_descending","subtitle":"From longest duration"},{"title":"Smallest First","arg":"size_ascending","subtitle":"From smallest file size"},{"title":"Biggest First","arg":"size_descending","subtitle":"From biggest file"}]</string>
+				<key>keyword</key>
+				<string>{var:sort_keyword}</string>
+				<key>matchmode</key>
+				<integer>0</integer>
+				<key>runningsubtext</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Sort by duration or file size</string>
+				<key>title</key>
+				<string>Sort and Play ({var:sort_keyword})</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.listfilter</string>
+			<key>uid</key>
+			<string>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>externaltriggerid</key>
+				<string>sort_order</string>
+				<key>passinputasargument</key>
+				<false/>
+				<key>passvariables</key>
+				<true/>
+				<key>workflowbundleid</key>
+				<string>self</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.callexternaltrigger</string>
+			<key>uid</key>
+			<string>9537F6F1-6608-4671-BE03-A3DCD23A06DF</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argument</key>
+				<string></string>
+				<key>passthroughargument</key>
+				<false/>
+				<key>variables</key>
+				<dict>
+					<key>sort_order</key>
+					<string>{query}</string>
+				</dict>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.argument</string>
+			<key>uid</key>
+			<string>D75377F6-6B47-4683-B400-224620A75802</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:edit_keyword}</string>
+				<key>subtext</key>
+				<string>Reorder and rename watchlist items</string>
+				<key>text</key>
+				<string>Edit ({var:edit_keyword})</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+edit_towatch</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>7D39E405-629C-4741-BBA3-D87CFC3D419A</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>alfredfiltersresults</key>
+				<true/>
+				<key>alfredfiltersresultsmatchmode</key>
+				<integer>0</integer>
+				<key>argumenttreatemptyqueryasnil</key>
+				<false/>
+				<key>argumenttrimmode</key>
+				<integer>0</integer>
+				<key>argumenttype</key>
+				<integer>1</integer>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>keyword</key>
+				<string>{var:unwatch_keyword}</string>
+				<key>queuedelaycustom</key>
+				<integer>3</integer>
+				<key>queuedelayimmediatelyinitially</key>
+				<true/>
+				<key>queuedelaymode</key>
+				<integer>0</integer>
+				<key>queuemode</key>
+				<integer>1</integer>
+				<key>runningsubtext</key>
+				<string>Please wait…</string>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+display_watched</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>subtext</key>
+				<string>Pick an item to mark as unwatched</string>
+				<key>title</key>
+				<string>Mark Unwatched ({var:unwatch_keyword})</string>
+				<key>type</key>
+				<integer>2</integer>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.scriptfilter</string>
+			<key>uid</key>
+			<string>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+mark_unwatched(ARGV[0])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>browser</key>
+				<string></string>
+				<key>skipqueryencode</key>
+				<false/>
+				<key>skipvarencode</key>
+				<false/>
+				<key>spaces</key>
+				<string></string>
+				<key>url</key>
+				<string>{query}</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.openurl</string>
+			<key>uid</key>
+			<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>autopaste</key>
+				<false/>
+				<key>clipboardtext</key>
+				<string>{query}</string>
+				<key>ignoredynamicplaceholders</key>
+				<false/>
+				<key>transient</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.clipboard</string>
+			<key>uid</key>
+			<string>824AADC5-ECD6-4B9A-B01B-901EE6EC2552</string>
+			<key>version</key>
+			<integer>3</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Usage
+
+Add files, series (folders), and streams (URLs) to your watchlist via the [Universal Action](https://www.alfredapp.com/help/features/universal-actions/).
+
+![Universal action for adding to watchlist](images/about/ua.png)
+
+Search through and play items from your list via the Play Keyword (default: `wlp`).
+
+![Showing items to play](images/about/wlp.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt;: Play.
+* &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the item’s URL in a web browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;:
+    * series: Rescan folder for audiovisual files.
+    * stream: Download. Requires [Download Media](https://alfred.app/workflows/vitor/download-media/).
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Mark as watched without playing.
+* &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Add to temporary playlist. Repeat for all desired items then &lt;kbd&gt;↩&lt;/kbd&gt; to play them in order. An unplayed playlist is reset after a few minutes.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;): Quick Look files and streams.
+
+Try the Sort and Play Keyword (default: `wls`) to get different views of your list. Sorting is temporary and does not affect the main list’s order.
+
+![Showing sort options](images/about/wls.png)
+
+Manually edit the list via the Edit Keyword (default: `wle`). Your text editor will open for you to reorder and rename at will. Keep the initial six characters and colon together with your title. Save and quit your editor to apply the changes.
+
+![Edit list](images/about/wle.png)
+
+Undo marking an item as watched via the Unwatch Keyword (default: `wlu`). &lt;kbd&gt;↩&lt;/kbd&gt; to mark not watched and try to recover from the trash.
+
+![Showing watched items](images/about/wlu.png)
+
+If the item has an origin URL (shown in the subtitle):
+
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Open URL in a web browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Copy to the clipboard.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;): Quick Look.
+
+### Subtitle reference:
+
+There are three types of item: file, series, and stream. Each result has its name as the title. The subtitle details information following a template:
+
+```
+≈ (4) 𐄁 22m 32s 𐄁 691M 𐄁 /Some/Path
+```
+
+* `≈`: Indicates item is a stream.
+    * file: N/A.
+    * series: N/A.
+    * stream: Always present.
+* `(4)`: Number of elements.
+    * file: N/A.
+    * series: Remaining audiovisual files in folder.
+    * stream: N/A for single items. Count of all items for playlists.
+* `22m 32s`: Running time.
+    * file: Running time of file.
+    * series: Running time of first audiovisual file in folder.
+    * stream: Combined running time of all elements.
+* `691M`: Size.
+    * file: Size of file.
+    * series: Size of first audiovisual file in folder.
+    * stream: N/A.
+* `/Some/Path`: Path.
+    * file: Path to file.
+    * series: Path to folder.
+    * stream: URL.
+
+## Supported Players
+
+All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as item and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).</string>
+	<key>uidata</key>
+	<dict>
+		<key>082FCE19-5B3C-454B-80ED-839DD28766F3</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>1A72974B-3830-4919-A743-5EDC252A6417</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1220</real>
+		</dict>
+		<key>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>980</real>
+		</dict>
+		<key>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>740</real>
+		</dict>
+		<key>28F2E2F9-493C-4450-B7F2-7B89896713E6</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>note</key>
+			<string>Download video with Download Media</string>
+			<key>xpos</key>
+			<real>770</real>
+			<key>ypos</key>
+			<real>1100</real>
+		</dict>
+		<key>2D2C4B1F-AD23-4F61-A7B2-2122216F9F0F</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>860</real>
+		</dict>
+		<key>35496472-08A5-4D85-9E98-65CD6118B500</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>620</real>
+		</dict>
+		<key>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</key>
+		<dict>
+			<key>xpos</key>
+			<real>690</real>
+			<key>ypos</key>
+			<real>1130</real>
+		</dict>
+		<key>3B8DC012-8D13-4919-8EB0-AC42C883527E</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>3EAD019C-8C8C-4EFB-84F6-EE99B2242EDA</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>500</real>
+		</dict>
+		<key>5311DD4E-D8CA-4897-AC1E-B64447F32339</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>260</real>
+		</dict>
+		<key>6393BD32-E835-4C08-BB48-E69D674DB1C7</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>930</real>
+			<key>ypos</key>
+			<real>1130</real>
+		</dict>
+		<key>63FBFF0E-05C5-47D2-9951-CB86E114264B</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>140</real>
+		</dict>
+		<key>68BC0595-725B-4DDD-B33F-01C3DE55A709</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>1460</real>
+		</dict>
+		<key>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>73EAEC22-6299-43A9-AE36-EF1EFD164D0E</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>380</real>
+		</dict>
+		<key>79817F29-F5D9-400C-9C2E-3289466CAD05</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>620</real>
+		</dict>
+		<key>7D39E405-629C-4741-BBA3-D87CFC3D419A</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1460</real>
+		</dict>
+		<key>7D4A7E97-3F90-4338-95E4-1F539C166F42</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1170</real>
+			<key>ypos</key>
+			<real>1100</real>
+		</dict>
+		<key>824AADC5-ECD6-4B9A-B01B-901EE6EC2552</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1820</real>
+		</dict>
+		<key>9537F6F1-6608-4671-BE03-A3DCD23A06DF</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1340</real>
+		</dict>
+		<key>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</key>
+		<dict>
+			<key>xpos</key>
+			<real>320</real>
+			<key>ypos</key>
+			<real>175</real>
+		</dict>
+		<key>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>860</real>
+		</dict>
+		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>980</real>
+		</dict>
+		<key>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1580</real>
+		</dict>
+		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
+		<dict>
+			<key>colorindex</key>
+			<integer>12</integer>
+			<key>xpos</key>
+			<real>1005</real>
+			<key>ypos</key>
+			<real>1120</real>
+		</dict>
+		<key>D27FE458-78D9-4C16-BF89-7E489D839F6D</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1100</real>
+		</dict>
+		<key>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>740</real>
+		</dict>
+		<key>D75377F6-6B47-4683-B400-224620A75802</key>
+		<dict>
+			<key>xpos</key>
+			<real>430</real>
+			<key>ypos</key>
+			<real>1370</real>
+		</dict>
+		<key>DA8908F6-F112-4087-86D4-1B9671DD766C</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>1700</real>
+		</dict>
+		<key>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>1580</real>
+		</dict>
+		<key>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>860</real>
+		</dict>
+		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
+		<dict>
+			<key>xpos</key>
+			<real>250</real>
+			<key>ypos</key>
+			<real>1340</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>wlp</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Play Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>play_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>wlu</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Unwatch Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>unwatch_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>wls</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Sort and Play Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>sort_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>wle</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Keywords to control the workflow.</string>
+			<key>label</key>
+			<string>Edit Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>edit_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>0</integer>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>When adding items, optionally move them to this folder.
+⌘↩ bypasses this setting.</string>
+			<key>label</key>
+			<string>Media Folder</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>move_on_add</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string></string>
+				<key>filtermode</key>
+				<integer>1</integer>
+				<key>placeholder</key>
+				<string>Defaults to the workflow cache folder</string>
+				<key>required</key>
+				<false/>
+			</dict>
+			<key>description</key>
+			<string>Set to sync your lists to a specific location.</string>
+			<key>label</key>
+			<string>Lists Folder</string>
+			<key>type</key>
+			<string>filepicker</string>
+			<key>variable</key>
+			<string>lists_dir</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>20</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string>Maximum number of watched items to show in the watched list.</string>
+			<key>label</key>
+			<string>Watched Items</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>maximum_watched</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>When playing an item, move it to the top of the list</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Play to Top</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>top_on_play</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>If unchecked, new items are appended</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Prepend New Items</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>prepend_new_item</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Send items to trash after watching</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Trash on Watched</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>trash_on_watched</string>
+		</dict>
+	</array>
+	<key>version</key>
+	<string>2022.7</string>
+	<key>webaddress</key>
+	<string>https://github.com/vitorgalvao/watch-list-workflow/</string>
+</dict>
+</plist>
