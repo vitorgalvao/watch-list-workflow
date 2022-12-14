@@ -1741,12 +1741,12 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>If unchecked, new items are appended</string>
+				<string>If unchecked, new items are added at the bottom</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Prepend New Items</string>
+			<string>Add New to Top</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -1773,7 +1773,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2022.8</string>
+	<string>2022.9</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/watch-list-workflow/</string>
 </dict>
