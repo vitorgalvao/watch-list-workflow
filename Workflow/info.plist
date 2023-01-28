@@ -1312,7 +1312,7 @@ There are three types of item: file, series, and stream. Each result has its nam
 
 ## Supported Players
 
-All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as item and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).</string>
+All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as played and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).</string>
 	<key>uidata</key>
 	<dict>
 		<key>082FCE19-5B3C-454B-80ED-839DD28766F3</key>
@@ -1773,7 +1773,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2022.9</string>
+	<string>2023.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/watch-list-workflow/</string>
 </dict>

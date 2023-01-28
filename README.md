@@ -14,13 +14,13 @@ Search through and play items from your list via the Play Keyword (default: `wlp
 
 ![Showing items to play](Workflow/images/about/wlp.png)
 
-* <kbd>⏎</kbd>: Play.
-* <kbd>⌃</kbd><kbd>⏎</kbd>: Open the item’s URL in a web browser.
-* <kbd>⌥</kbd><kbd>⏎</kbd>:
+* <kbd>↩&#xFE0E;</kbd>: Play.
+* <kbd>⌃</kbd><kbd>↩&#xFE0E;</kbd>: Open the item’s URL in a web browser.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd>:
     * series: Rescan folder for audiovisual files.
     * stream: Download. Requires [Download Media](https://alfred.app/workflows/vitor/download-media/).
-* <kbd>⌘</kbd><kbd>⏎</kbd>: Mark as watched without playing.
-* <kbd>⇧</kbd><kbd>⏎</kbd>: Add to temporary playlist. Repeat for all desired items then <kbd>⏎</kbd> to play them in order. An unplayed playlist is reset after a few minutes.
+* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd>: Mark as watched without playing.
+* <kbd>⇧</kbd><kbd>↩&#xFE0E;</kbd>: Add to temporary playlist. Repeat for all desired items then <kbd>↩&#xFE0E;</kbd> to play them in order. An unplayed playlist is reset after a few minutes.
 * <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>): Quick Look files and streams.
 
 Try the Sort and Play Keyword (default: `wls`) to get different views of your list. Sorting is temporary and does not affect the main list’s order.
@@ -31,14 +31,14 @@ Manually edit the list via the Edit Keyword (default: `wle`). Your text editor w
 
 ![Edit list](Workflow/images/about/wle.png)
 
-Undo marking an item as watched via the Unwatch Keyword (default: `wlu`). <kbd>⏎</kbd> to mark not watched and try to recover from the trash.
+Undo marking an item as watched via the Unwatch Keyword (default: `wlu`). <kbd>↩&#xFE0E;</kbd> to mark not watched and try to recover from the trash.
 
 ![Showing watched items](Workflow/images/about/wlu.png)
 
 If the item has an origin URL (shown in the subtitle):
 
-* <kbd>⌘</kbd><kbd>⏎</kbd>: Open URL in a web browser.
-* <kbd>⌥</kbd><kbd>⏎</kbd>: Copy to the clipboard.
+* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd>: Open URL in a web browser.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd>: Copy to the clipboard.
 * <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>): Quick Look.
 
 ### Subtitle reference:
@@ -72,4 +72,4 @@ There are three types of item: file, series, and stream. Each result has its nam
 
 ## Supported Players
 
-All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as item and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
+All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as played and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
