@@ -2,7 +2,7 @@
 
 Play and manage local media and streams
 
-<a href='https://alfred.app/workflows/vitor/watch-list'>⤓ Install on the Alfred Gallery</a>
+[⤓ Install on the Alfred Gallery](https://alfred.app/workflows/vitor/watch-list)
 
 ## Usage
 
@@ -10,7 +10,7 @@ Add files, series (folders), and streams (URLs) to your watchlist via the [Unive
 
 ![Universal action for adding to watchlist](Workflow/images/about/ua.png)
 
-Search through and play items from your list via the Play Keyword (default: `wlp`).
+Search through and play items from your list via the `wlp` keyword.
 
 ![Showing items to play](Workflow/images/about/wlp.png)
 
@@ -23,15 +23,15 @@ Search through and play items from your list via the Play Keyword (default: `wlp
 * <kbd>⇧</kbd><kbd>↩&#xFE0E;</kbd>: Add to temporary playlist. Repeat for all desired items then <kbd>↩&#xFE0E;</kbd> to play them in order. An unplayed playlist is reset after a few minutes.
 * <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>): Quick Look files and streams.
 
-Try the Sort and Play Keyword (default: `wls`) to get different views of your list. Sorting is temporary and does not affect the main list’s order.
+Sort your list in different ways with `wls`. Sorting is temporary and does not affect the main list’s order.
 
 ![Showing sort options](Workflow/images/about/wls.png)
 
-Manually edit the list via the Edit Keyword (default: `wle`). Your text editor will open for you to reorder and rename at will. Keep the initial six characters and colon together with your title. Save and quit your editor to apply the changes.
+Manually edit the list via the `wle` keyword. Your text editor will open for you to reorder and rename at will. Keep the initial six characters and colon together with your title. Save and quit your editor to apply the changes.
 
 ![Edit list](Workflow/images/about/wle.png)
 
-Undo marking an item as watched via the Unwatch Keyword (default: `wlu`). <kbd>↩&#xFE0E;</kbd> to mark not watched and try to recover from the trash.
+Undo marking an item as watched via the `wlu` keyword. <kbd>↩&#xFE0E;</kbd> to mark not watched and try to recover from the trash.
 
 ![Showing watched items](Workflow/images/about/wlu.png)
 
