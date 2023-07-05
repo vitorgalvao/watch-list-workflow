@@ -1771,6 +1771,25 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>variable</key>
 			<string>trash_on_watched</string>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<true/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Prioritise actioning URLs, even for local items</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Universal Actions</string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>prefer_action_url</string>
+		</dict>
 	</array>
 	<key>version</key>
 	<string>2023.2</string>

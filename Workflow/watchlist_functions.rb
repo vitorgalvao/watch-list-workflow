@@ -12,6 +12,7 @@ Move_when_adding = !ENV['move_on_add'].empty?
 Prepend_new = ENV['prepend_new_item'] == '1'
 Trash_on_watched = ENV['trash_on_watched'] == '1'
 Top_on_play = ENV['top_on_play'] == '1'
+Prefer_action_url = ENV['prefer_action_url'] == '1'
 
 def move_to_dir(path, target_dir)
   path_name = File.basename(path)
@@ -202,7 +203,8 @@ def display_towatch(sort = nil)
     item = {
       title: details['name'],
       arg: id,
-      mods: {}
+      mods: {},
+      action: {}
     }
 
     # Common modifications
@@ -218,12 +220,15 @@ def display_towatch(sort = nil)
     when 'file'
       item[:quicklookurl] = details['path']
       item[:mods][:alt] = { subtitle: 'This modifier is only available on series and streams', valid: false }
+      item[:action][:auto] = Prefer_action_url && !details['url'].nil? ? details['url'] : details['path']
     when 'stream'
       item[:subtitle] = "≈ #{item_count}#{details['duration']['human']} 𐄁 #{details['url']}"
       item[:quicklookurl] = details['url']
       item[:mods][:alt] = { subtitle: 'Download stream' }
+      item[:action][:url] = details['url']
     when 'series'
       item[:mods][:alt] = { subtitle: 'Rescan series' }
+      item[:action][:file] = details['path']
     end
 
     script_filter_items.push(item)
@@ -249,7 +254,8 @@ def display_watched
     item = {
       title: details['name'],
       arg: id,
-      mods: {}
+      mods: {},
+      action: {}
     }
 
     # Modifications
@@ -262,6 +268,7 @@ def display_watched
       item[:quicklookurl] = details['url']
       item[:mods][:cmd] = { subtitle: 'Open link in default browser', arg: details['url'] }
       item[:mods][:alt] = { subtitle: 'Copy link to clipboard', arg: details['url'] }
+      item[:action][:url] = details['url']
     end
 
     script_filter_items.push(item)
