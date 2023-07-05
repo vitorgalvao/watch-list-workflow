@@ -213,7 +213,7 @@ def display_towatch(sort = nil)
       item[:subtitle] = "#{item_count}#{details['duration']['human']} 𐄁 #{details['size']['human']} 𐄁 #{details['path']}"
     end
 
-    item[:mods][:control] = details['url'].nil? ? { subtitle: 'This item has no origin url', valid: false } : { subtitle: details['url'], arg: details['url'] }
+    item[:mods][:ctrl] = details['url'].nil? ? { subtitle: 'This item has no origin url', valid: false } : { subtitle: details['url'], arg: details['url'] }
 
     # Specific modifications
     case details['type']
@@ -261,12 +261,12 @@ def display_watched
     # Modifications
     if details['url'].nil?
       item[:subtitle] = details['path']
-      item[:mods][:cmd] = { subtitle: 'This item has no origin url', valid: false }
+      item[:mods][:ctrl] = { subtitle: 'This item has no origin url', valid: false }
       item[:mods][:alt] = { subtitle: 'This item has no origin url', valid: false }
     else
       item[:subtitle] = details['type'] == 'stream' ? details['url'] : "#{details['url']} 𐄁 #{details['path']}"
       item[:quicklookurl] = details['url']
-      item[:mods][:cmd] = { subtitle: 'Open link in default browser', arg: details['url'] }
+      item[:mods][:ctrl] = { subtitle: 'Open link in default browser', arg: details['url'] }
       item[:mods][:alt] = { subtitle: 'Copy link to clipboard', arg: details['url'] }
       item[:action][:url] = details['url']
     end
