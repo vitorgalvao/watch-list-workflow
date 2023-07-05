@@ -1623,7 +1623,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Sort and Play Keyword</string>
+			<string>Sort Keyword</string>
 			<key>type</key>
 			<string>textfield</string>
 			<key>variable</key>
@@ -1706,7 +1706,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<true/>
 			</dict>
 			<key>description</key>
-			<string>Maximum number of watched items to show in the watched list.</string>
+			<string>Maximum number of items to show in the watched list.</string>
 			<key>label</key>
 			<string>Watched Items</string>
 			<key>type</key>
@@ -1722,7 +1722,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>When playing an item, move it to the top of the list</string>
+				<string>Move item to top of the list when playing</string>
 			</dict>
 			<key>description</key>
 			<string></string>
@@ -1741,12 +1741,12 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>If unchecked, new items are added at the bottom</string>
+				<string>Add new items to the top instead of the bottom</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Add New to Top</string>
+			<string>Add to Top</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
