@@ -5,14 +5,25 @@ require 'open3'
 require 'yaml'
 
 Lists_dir = ENV['lists_dir'].empty? ? ENV['alfred_workflow_data'] : ENV['lists_dir']
-Towatch_list = "#{Lists_dir}/towatch.yaml".freeze
-Watched_list = "#{Lists_dir}/watched.yaml".freeze
+Towatch_list = "#{Lists_dir}/towatch.json".freeze
+Watched_list = "#{Lists_dir}/watched.json".freeze
 Quick_playlist = File.join(ENV['alfred_workflow_cache'], 'quick_playlist.txt')
 Move_when_adding = !ENV['move_on_add'].empty?
 Prepend_new = ENV['prepend_new_item'] == '1'
 Trash_on_watched = ENV['trash_on_watched'] == '1'
 Top_on_play = ENV['top_on_play'] == '1'
 Prefer_action_url = ENV['prefer_action_url'] == '1'
+
+# Convert lists to JSON
+if !File.exist?(Towatch_list) && File.exist?("#{Lists_dir}/towatch.yaml")
+  File.write(Towatch_list, JSON.pretty_generate(YAML.load_file("#{Lists_dir}/towatch.yaml")))
+  File.delete("#{Lists_dir}/towatch.yaml")
+end
+
+if !File.exist?(Watched_list) && File.exist?("#{Lists_dir}/watched.yaml")
+  File.write(Watched_list, JSON.pretty_generate(YAML.load_file("#{Lists_dir}/watched.yaml")))
+  File.delete("#{Lists_dir}/watched.yaml")
+end
 
 def move_to_dir(path, target_dir)
   path_name = File.basename(path)
@@ -106,7 +117,7 @@ def add_dir_to_watchlist(dir_path, id = random_hex)
 end
 
 def update_series(id)
-  list_hash = YAML.load_file(Towatch_list)
+  list_hash = JSON.parse(File.read(Towatch_list))
 
   dir_path = list_hash[id]['path']
   audiovisual_files = list_audiovisual_files(dir_path)
@@ -128,7 +139,7 @@ def update_series(id)
   list_hash[id]['size']['human'] = size_human
   list_hash[id]['ratio'] = size_duration_ratio
 
-  File.write(Towatch_list, list_hash.to_yaml)
+  File.write(Towatch_list, JSON.pretty_generate(list_hash))
 end
 
 def add_url_to_watchlist(url, playlist = false, id = random_hex)
@@ -171,9 +182,9 @@ end
 def display_towatch(sort = nil)
   ensure_data_paths
 
-  list_hash = YAML.load_file(Towatch_list)
+  list_hash = JSON.parse(File.read(Towatch_list)) rescue {}
 
-  if list_hash == false || list_hash.nil?
+  if list_hash.empty?
     puts({ items: [{ title: 'Play (wlp)', subtitle: 'Nothing to watch', valid: false }] }.to_json)
     exit 0
   end
@@ -240,9 +251,9 @@ end
 def display_watched
   ensure_data_paths
 
-  list_hash = YAML.load_file(Watched_list)
+  list_hash = JSON.parse(File.read(Watched_list)) rescue {}
 
-  if list_hash == false || list_hash.nil?
+  if list_hash.empty?
     puts({ items: [{ title: 'Mark unwatched (wlu)', subtitle: 'You have no unwatched files', valid: false }] }.to_json)
     exit 0
   end
@@ -279,7 +290,7 @@ end
 
 def play(id, send_to_watched = true)
   send_to_top(id) if Top_on_play
-  item = YAML.load_file(Towatch_list)[id]
+  item = JSON.parse(File.read(Towatch_list))[id]
 
   case item['type']
   when 'file'
@@ -342,7 +353,7 @@ def play_item(type, path)
 end
 
 def mark_watched(id)
-  item = YAML.load_file(Towatch_list)[id]
+  item = JSON.parse(File.read(Towatch_list))[id]
   maximum_watched =
     begin
       Integer(ENV['maximum_watched'], 10)
@@ -351,8 +362,8 @@ def mark_watched(id)
     end
 
   switch_list(id, Towatch_list, Watched_list)
-  list_hash = YAML.load_file(Watched_list)
-  File.write(Watched_list, list_hash.first(maximum_watched).to_h.to_yaml)
+  list_hash = JSON.parse(File.read(Watched_list))
+  File.write(Watched_list, JSON.pretty_generate(list_hash.first(maximum_watched).to_h))
 
   if item['type'] == 'stream'
     system('/usr/bin/afplay', '/System/Library/Sounds/Purr.aiff')
@@ -368,12 +379,12 @@ def mark_watched(id)
   # If name had to change to send to Trash, update list with new name
   item['trashed_name'] = trashed_name
   list_hash[id] = item
-  File.write(Watched_list, list_hash.first(maximum_watched).to_h.to_yaml)
+  File.write(Watched_list, JSON.pretty_generate(list_hash.first(maximum_watched).to_h))
 end
 
 def mark_unwatched(id)
   # Get item info early, before switching lists
-  item = YAML.load_file(Watched_list)[id]
+  item = JSON.parse(File.read(Watched_list))[id]
 
   switch_list(id, Watched_list, Towatch_list)
 
@@ -385,10 +396,10 @@ def mark_unwatched(id)
   if item['trashed_name']
     trashed_path = File.join(ENV['HOME'], '.Trash', item['trashed_name'])
 
-    list_hash = YAML.load_file(Towatch_list)
+    list_hash = JSON.parse(File.read(Towatch_list))
     item.delete('trashed_name')
     list_hash[id] = item
-    File.write(Towatch_list, list_hash.to_yaml)
+    File.write(Towatch_list, JSON.pretty_generate(list_hash))
   else
     trashed_path = File.join(ENV['HOME'], '.Trash', File.basename(item['path']))
   end
@@ -401,7 +412,7 @@ def mark_unwatched(id)
 end
 
 def download_stream(id)
-  item = YAML.load_file(Towatch_list)[id]
+  item = JSON.parse(File.read(Towatch_list))[id]
   url = item['url']
 
   mark_watched(id)
@@ -414,7 +425,7 @@ def edit_towatch
   tmp_file = Tempfile.new('watchlist_edit')
   origin_order = ''
 
-  origin_hash = YAML.load_file(Towatch_list)
+  origin_hash = JSON.parse(File.read(Towatch_list))
   target_hash = {}
 
   origin_hash.keys.each { |id| origin_order += "#{id}: #{origin_hash[id]['name']}\n" }
@@ -434,7 +445,7 @@ def edit_towatch
     target_hash.store(id, item_content_hash)
   end
 
-  File.write(Towatch_list, target_hash.to_yaml)
+  File.write(Towatch_list, JSON.pretty_generate(target_hash))
 end
 
 def verify_quick_playlist(minutes_threshold = 3)
@@ -518,28 +529,28 @@ def add_to_list(hash, list)
 end
 
 def prepend_to_list(input_hash, list)
-  list_hash = YAML.load_file(list) || {}
-  target_yaml = input_hash.merge(list_hash).to_yaml
-  File.write(list, target_yaml)
+  list_hash = JSON.parse(File.read(list)) rescue {}
+  target_json = JSON.pretty_generate(input_hash.merge(list_hash))
+  File.write(list, target_json)
 end
 
 def append_to_list(input_hash, list)
-  list_hash = YAML.load_file(list) || {}
-  target_yaml = list_hash.merge(input_hash).to_yaml
-  File.write(list, target_yaml)
+  list_hash = JSON.parse(File.read(list)) rescue {}
+  target_json = JSON.pretty_generate(list_hash.merge(input_hash))
+  File.write(list, target_json)
 end
 
 def delete_from_list(id, list)
-  list_hash = YAML.load_file(list)
+  list_hash = JSON.parse(File.read(list))
   list_hash.delete(id)
-  target_yaml = list_hash.empty? ? '---' : list_hash.to_yaml
-  File.write(list, target_yaml)
+  target_json = JSON.pretty_generate(list_hash)
+  File.write(list, target_json)
 end
 
 def switch_list(id, origin_list, target_list)
   ensure_data_paths
 
-  id_hash = { id => YAML.load_file(origin_list)[id] }
+  id_hash = { id => JSON.parse(File.read(origin_list))[id] }
 
   abort 'Item no longer exists' if id_hash.values.first.nil? # Detect if an item no longer exists before trying to move. Fix for cases where the same item is chosen a second time before having finished playing.
 
