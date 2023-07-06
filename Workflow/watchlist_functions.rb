@@ -14,17 +14,6 @@ Trash_on_watched = ENV['trash_on_watched'] == '1'
 Top_on_play = ENV['top_on_play'] == '1'
 Prefer_action_url = ENV['prefer_action_url'] == '1'
 
-# Convert lists to JSON
-if !File.exist?(Towatch_list) && File.exist?("#{Lists_dir}/towatch.yaml")
-  File.write(Towatch_list, JSON.pretty_generate(YAML.load_file("#{Lists_dir}/towatch.yaml")))
-  File.delete("#{Lists_dir}/towatch.yaml")
-end
-
-if !File.exist?(Watched_list) && File.exist?("#{Lists_dir}/watched.yaml")
-  File.write(Watched_list, JSON.pretty_generate(YAML.load_file("#{Lists_dir}/watched.yaml")))
-  File.delete("#{Lists_dir}/watched.yaml")
-end
-
 def move_to_dir(path, target_dir)
   path_name = File.basename(path)
   target_path = File.join(target_dir, path_name)
