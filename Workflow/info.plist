@@ -299,7 +299,7 @@
 				<key>destinationuid</key>
 				<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
 				<key>modifiers</key>
-				<integer>1048576</integer>
+				<integer>262144</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
