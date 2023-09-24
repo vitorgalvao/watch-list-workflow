@@ -403,8 +403,8 @@
 				<key>script</key>
 				<string>require "#{Dir.pwd}/watchlist_functions.rb"
 
-paths = ENV['added_item_order'] == 'append' ? ARGV.sort : ARGV.sort.reverse
-move_paths = ENV['do_not_move'] == 'true' ? false : true
+paths = ENV['prepend_new_item'] == '1' ? ARGV.sort.reverse : ARGV.sort
+move_paths = ENV['do_not_move'] == '1' ? false : true
 paths.each { |path| add_local_to_watchlist(path, random_hex, move_paths) }</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
@@ -465,7 +465,7 @@ paths.each { |path| add_local_to_watchlist(path, random_hex, move_paths) }</stri
 				<key>variables</key>
 				<dict>
 					<key>do_not_move</key>
-					<string>true</string>
+					<string>1</string>
 				</dict>
 			</dict>
 			<key>type</key>
@@ -636,21 +636,6 @@ print id</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>add_and_play_stream</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -674,6 +659,21 @@ print id</string>
 			<string>26626E87-515C-4312-87F7-4F604EBBF2F9</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_and_play_stream</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1083,6 +1083,27 @@ add_to_quick_playlist(ARGV[0])</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:edit_keyword}</string>
+				<key>subtext</key>
+				<string>Reorder and rename watchlist items</string>
+				<key>text</key>
+				<string>Edit ({var:edit_keyword})</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1104,27 +1125,6 @@ edit_towatch</string>
 			<string>7D39E405-629C-4741-BBA3-D87CFC3D419A</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:edit_keyword}</string>
-				<key>subtext</key>
-				<string>Reorder and rename watchlist items</string>
-				<key>text</key>
-				<string>Edit ({var:edit_keyword})</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
