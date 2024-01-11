@@ -636,6 +636,21 @@ print id</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_and_play_stream</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -659,21 +674,6 @@ print id</string>
 			<string>26626E87-515C-4312-87F7-4F604EBBF2F9</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>add_and_play_stream</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -910,7 +910,7 @@ function run(argv) {
 				<key>button3</key>
 				<string></string>
 				<key>description</key>
-				<string>The Download Media workflow is required to download video</string>
+				<string>The Download Media workflow is required to download video.</string>
 				<key>title</key>
 				<string>Download Media Not Installed</string>
 			</dict>
@@ -1083,27 +1083,6 @@ add_to_quick_playlist(ARGV[0])</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:edit_keyword}</string>
-				<key>subtext</key>
-				<string>Reorder and rename watchlist items</string>
-				<key>text</key>
-				<string>Edit ({var:edit_keyword})</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1125,6 +1104,27 @@ edit_towatch</string>
 			<string>7D39E405-629C-4741-BBA3-D87CFC3D419A</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:edit_keyword}</string>
+				<key>subtext</key>
+				<string>Reorder and rename watchlist items</string>
+				<key>text</key>
+				<string>Edit ({var:edit_keyword})</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
