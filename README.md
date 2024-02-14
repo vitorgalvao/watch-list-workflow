@@ -14,14 +14,12 @@ Search through and play items from your list via the `wlp` keyword.
 
 ![Showing items to play](Workflow/images/about/wlp.png)
 
-* <kbd>↩&#xFE0E;</kbd>: Play.
-* <kbd>⌃</kbd><kbd>↩&#xFE0E;</kbd>: Open the item’s URL in a web browser.
-* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd>:
-    * series: Rescan folder for audiovisual files.
-    * stream: Download. Requires [Download Media](https://alfred.app/workflows/vitor/download-media/).
-* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd>: Mark as watched without playing.
-* <kbd>⇧</kbd><kbd>↩&#xFE0E;</kbd>: Add to temporary playlist. Repeat for all desired items then <kbd>↩&#xFE0E;</kbd> to play them in order. An unplayed playlist is reset after a few minutes.
-* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>): Quick Look files and streams.
+* <kbd>↩&#xFE0E;</kbd> Play.
+* <kbd>⌃</kbd><kbd>↩&#xFE0E;</kbd> Open the item’s URL in a web browser.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Download stream (requires [Download Media](https://alfred.app/workflows/vitor/download-media/)) or rescan folder for audiovisual files.
+* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Mark as watched without playing.
+* <kbd>⇧</kbd><kbd>↩&#xFE0E;</kbd> Add to temporary playlist. Repeat for all desired items then <kbd>↩&#xFE0E;</kbd> to play in order. An unplayed playlist resets after a few minutes.
+* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>) Quick Look files and streams.
 
 Sort your list in different ways with `wls`. Sorting is temporary and does not affect the main list’s order.
 
@@ -37,9 +35,9 @@ Undo marking an item as watched via the `wlu` keyword. <kbd>↩&#xFE0E;</kbd> to
 
 If the item has an origin URL (shown in the subtitle):
 
-* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd>: Open URL in a web browser.
-* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd>: Copy to the clipboard.
-* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>): Quick Look.
+* <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Open URL in a web browser.
+* <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Copy to the clipboard.
+* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>) Quick Look.
 
 ### Subtitle reference:
 
