@@ -1254,14 +1254,12 @@ Search through and play items from your list via the `wlp` keyword.
 
 ![Showing items to play](images/about/wlp.png)
 
-* &lt;kbd&gt;↩&lt;/kbd&gt;: Play.
-* &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Open the item’s URL in a web browser.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;:
-    * series: Rescan folder for audiovisual files.
-    * stream: Download. Requires [Download Media](https://alfred.app/workflows/vitor/download-media/).
-* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Mark as watched without playing.
-* &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Add to temporary playlist. Repeat for all desired items then &lt;kbd&gt;↩&lt;/kbd&gt; to play them in order. An unplayed playlist is reset after a few minutes.
-* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;): Quick Look files and streams.
+* &lt;kbd&gt;↩&lt;/kbd&gt; Play.
+* &lt;kbd&gt;⌃&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open the item’s URL in a web browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Download stream (requires [Download Media](https://alfred.app/workflows/vitor/download-media/)) or rescan folder for audiovisual files.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Mark as watched without playing.
+* &lt;kbd&gt;⇧&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Add to temporary playlist. Repeat for all desired items then &lt;kbd&gt;↩&lt;/kbd&gt; to play in order. An unplayed playlist resets after a few minutes.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;) Quick Look files and streams.
 
 Sort your list in different ways with `wls`. Sorting is temporary and does not affect the main list’s order.
 
@@ -1277,9 +1275,9 @@ Undo marking an item as watched via the `wlu` keyword. &lt;kbd&gt;↩&lt;/kbd&gt
 
 If the item has an origin URL (shown in the subtitle):
 
-* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Open URL in a web browser.
-* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt;: Copy to the clipboard.
-* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;): Quick Look.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Open URL in a web browser.
+* &lt;kbd&gt;⌥&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Copy to the clipboard.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;Y&lt;/kbd&gt; (or tap &lt;kbd&gt;⇧&lt;/kbd&gt;) Quick Look.
 
 ### Subtitle reference:
 
