@@ -750,6 +750,8 @@ display_towatch(ENV['sort_order'])</string>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Pick an item to play</string>
 				<key>title</key>
@@ -1112,6 +1114,8 @@ edit_towatch</string>
 				<integer>2</integer>
 				<key>keyword</key>
 				<string>{var:edit_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Reorder and rename watchlist items</string>
 				<key>text</key>
@@ -1161,6 +1165,8 @@ display_watched</string>
 				<integer>1</integer>
 				<key>scriptfile</key>
 				<string></string>
+				<key>skipuniversalaction</key>
+				<true/>
 				<key>subtext</key>
 				<string>Pick an item to mark as unwatched</string>
 				<key>title</key>
