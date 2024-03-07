@@ -408,21 +408,14 @@ def download_stream(id)
   puts url
 end
 
-def edit_towatch
-  require 'tempfile'
+def read_towatch_order
+  print JSON.parse(File.read(Towatch_list)).map { |id, details| "#{id}: #{details['name']}" }.join("\n")
+end
 
-  tmp_file = Tempfile.new('watchlist_edit')
-  origin_order = ''
+def write_towatch_order(text_order)
+  origin_hash = JSON.parse(File.read(Towatch_list))  
 
-  origin_hash = JSON.parse(File.read(Towatch_list))
-  target_hash = {}
-
-  origin_hash.keys.each { |id| origin_order += "#{id}: #{origin_hash[id]['name']}\n" }
-  File.write(tmp_file, origin_order)
-  system('open', '-ntW', tmp_file.to_path)
-
-  target_order = File.read(tmp_file)
-  target_order.split("\n").each do |item|
+  target_hash = text_order.strip.split("\n").each_with_object({}) { |item, new_hash|
     id_name = item.split(':')
     id = id_name[0].strip
     name = id_name[1..-1].join(':').strip
@@ -431,8 +424,8 @@ def edit_towatch
     abort "Unrecognised id: #{id}" if item_content_hash.nil?
     item_content_hash['name'] = name
 
-    target_hash.store(id, item_content_hash)
-  end
+    new_hash.store(id, item_content_hash)
+  }
 
   File.write(Towatch_list, JSON.pretty_generate(target_hash))
 end

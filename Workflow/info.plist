@@ -212,6 +212,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>7D39E405-629C-4741-BBA3-D87CFC3D419A</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</key>
 		<array>
 			<dict>
@@ -227,6 +240,19 @@
 		</array>
 		<key>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</key>
 		<array/>
+		<key>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F798BE22-B717-495C-A1D8-A5B3414DF2B1</string>
+				<key>modifiers</key>
+				<integer>1048576</integer>
+				<key>modifiersubtext</key>
+				<string>Save new order</string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<array/>
 		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
@@ -1085,6 +1111,39 @@ add_to_quick_playlist(ARGV[0])</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>behaviour</key>
+				<integer>1</integer>
+				<key>fontmode</key>
+				<integer>0</integer>
+				<key>fontsizing</key>
+				<integer>0</integer>
+				<key>footertext</key>
+				<string>⌘↩ Save new order</string>
+				<key>inputfile</key>
+				<string></string>
+				<key>inputtype</key>
+				<integer>0</integer>
+				<key>loadingtext</key>
+				<string></string>
+				<key>outputmode</key>
+				<integer>0</integer>
+				<key>scriptinput</key>
+				<integer>0</integer>
+				<key>spellchecking</key>
+				<integer>0</integer>
+				<key>stackview</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.userinterface.text</string>
+			<key>uid</key>
+			<string>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1092,7 +1151,32 @@ add_to_quick_playlist(ARGV[0])</string>
 				<key>script</key>
 				<string>require "#{Dir.pwd}/watchlist_functions.rb"
 
-edit_towatch</string>
+write_towatch_order(ARGV[0])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>F798BE22-B717-495C-A1D8-A5B3414DF2B1</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+read_towatch_order</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -1271,7 +1355,7 @@ Sort your list in different ways with `wls`. Sorting is temporary and does not a
 
 ![Showing sort options](images/about/wls.png)
 
-Manually edit the list via the `wle` keyword. Your text editor will open for you to reorder and rename at will. Keep the initial six characters and colon together with your title. Save and quit your editor to apply the changes.
+Manually edit the list via the `wle` keyword. A Text View will open for you to reorder and rename at will. Keep the initial six characters and colon together with a title. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; to apply the changes.
 
 ![Edit list](images/about/wle.png)
 
@@ -1495,6 +1579,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>ypos</key>
 			<real>860</real>
 		</dict>
+		<key>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</key>
+		<dict>
+			<key>xpos</key>
+			<real>770</real>
+			<key>ypos</key>
+			<real>1460</real>
+		</dict>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<dict>
 			<key>xpos</key>
@@ -1559,6 +1650,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<real>250</real>
 			<key>ypos</key>
 			<real>860</real>
+		</dict>
+		<key>F798BE22-B717-495C-A1D8-A5B3414DF2B1</key>
+		<dict>
+			<key>xpos</key>
+			<real>1005</real>
+			<key>ypos</key>
+			<real>1460</real>
 		</dict>
 		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
 		<dict>
