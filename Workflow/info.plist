@@ -6,11 +6,37 @@
 	<string>com.vitorgalvao.alfred.watchlist</string>
 	<key>connections</key>
 	<dict>
+		<key>12FDD660-80AA-4FAF-947F-FCF0214BBD32</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>222FE78E-6C32-4D15-BD10-5439EB194B3C</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
 				<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>222FE78E-6C32-4D15-BD10-5439EB194B3C</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -185,16 +211,6 @@
 				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-			<dict>
-				<key>destinationuid</key>
-				<string>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</string>
-				<key>modifiers</key>
-				<integer>1048576</integer>
-				<key>modifiersubtext</key>
-				<string>Add full playlist to play from stream</string>
 				<key>vitoclose</key>
 				<false/>
 			</dict>
@@ -565,27 +581,40 @@ add_url_to_watchlist(ARGV[0].strip)</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>require "#{Dir.pwd}/watchlist_functions.rb"
-
-add_url_to_watchlist(ARGV[0].strip, true)</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
+				<key>argumenttype</key>
 				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:browser_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Add the frontmost browser tab to the watchlist</string>
+				<key>text</key>
+				<string>Browser Tab</string>
+				<key>withspace</key>
+				<false/>
 			</dict>
 			<key>type</key>
-			<string>alfred.workflow.action.script</string>
+			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
-			<string>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</string>
+			<string>12FDD660-80AA-4FAF-947F-FCF0214BBD32</string>
 			<key>version</key>
-			<integer>2</integer>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>tasksettings</key>
+				<dict/>
+				<key>taskuid</key>
+				<string>com.alfredapp.automation.extras/web-browsers/frontmost-browser/frontmost.tabs.current</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.automation.task</string>
+			<key>uid</key>
+			<string>222FE78E-6C32-4D15-BD10-5439EB194B3C</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -662,21 +691,6 @@ print id</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>add_and_play_stream</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -704,6 +718,21 @@ print id</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_and_play_stream</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -723,6 +752,46 @@ play(ARGV[0]) unless play_quick_playlist</string>
 			<string>alfred.workflow.action.script</string>
 			<key>uid</key>
 			<string>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>play_id</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>require "#{Dir.pwd}/watchlist_functions.rb"
+
+mark_watched(ARGV[0])</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>2</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>C929975A-3B90-474A-BA08-595EAB51A9B2</string>
 			<key>version</key>
 			<integer>2</integer>
 		</dict>
@@ -781,7 +850,7 @@ display_towatch(ENV['sort_order'])</string>
 				<key>subtext</key>
 				<string>Pick an item to play</string>
 				<key>title</key>
-				<string>Play ({var:play_keyword})</string>
+				<string>Play</string>
 				<key>type</key>
 				<integer>2</integer>
 				<key>withspace</key>
@@ -793,46 +862,6 @@ display_towatch(ENV['sort_order'])</string>
 			<string>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</string>
 			<key>version</key>
 			<integer>3</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>concurrently</key>
-				<false/>
-				<key>escaping</key>
-				<integer>102</integer>
-				<key>script</key>
-				<string>require "#{Dir.pwd}/watchlist_functions.rb"
-
-mark_watched(ARGV[0])</string>
-				<key>scriptargtype</key>
-				<integer>1</integer>
-				<key>scriptfile</key>
-				<string></string>
-				<key>type</key>
-				<integer>2</integer>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.action.script</string>
-			<key>uid</key>
-			<string>C929975A-3B90-474A-BA08-595EAB51A9B2</string>
-			<key>version</key>
-			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>play_id</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1058,7 +1087,7 @@ add_to_quick_playlist(ARGV[0])</string>
 				<key>subtext</key>
 				<string>Sort by duration or file size</string>
 				<key>title</key>
-				<string>Sort and Play ({var:sort_keyword})</string>
+				<string>Sort and Play</string>
 				<key>withspace</key>
 				<true/>
 			</dict>
@@ -1144,6 +1173,29 @@ add_to_quick_playlist(ARGV[0])</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:edit_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Reorder and rename watchlist items</string>
+				<key>text</key>
+				<string>Edit</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1194,29 +1246,6 @@ read_towatch_order</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:edit_keyword}</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>Reorder and rename watchlist items</string>
-				<key>text</key>
-				<string>Edit ({var:edit_keyword})</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>alfredfiltersresults</key>
 				<true/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -1254,7 +1283,7 @@ display_watched</string>
 				<key>subtext</key>
 				<string>Pick an item to mark as unwatched</string>
 				<key>title</key>
-				<string>Mark Unwatched ({var:unwatch_keyword})</string>
+				<string>Mark Unwatched</string>
 				<key>type</key>
 				<integer>2</integer>
 				<key>withspace</key>
@@ -1355,6 +1384,13 @@ Sort your list in different ways with `wls`. Sorting is temporary and does not a
 
 ![Showing sort options](images/about/wls.png)
 
+Add the frontmost browser URL to the list with `wlb`.
+
+![Frontmost browser tab](images/about/wlb.png)
+
+* &lt;kbd&gt;↩&lt;/kbd&gt; Add URL to watchlist.
+* &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; Add and play URL.
+
 Manually edit the list via the `wle` keyword. A Text View will open for you to reorder and rename at will. Keep the initial six characters and colon together with a title. &lt;kbd&gt;⌘&lt;/kbd&gt;&lt;kbd&gt;↩&lt;/kbd&gt; to apply the changes.
 
 ![Edit list](images/about/wle.png)
@@ -1408,35 +1444,42 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>25</real>
+		</dict>
+		<key>12FDD660-80AA-4FAF-947F-FCF0214BBD32</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>525</real>
 		</dict>
 		<key>1A72974B-3830-4919-A743-5EDC252A6417</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1220</real>
+			<real>1385</real>
 		</dict>
 		<key>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>980</real>
+			<real>1025</real>
 		</dict>
-		<key>1F983BA2-CA1B-4B29-A065-3DFFB531DD92</key>
+		<key>222FE78E-6C32-4D15-BD10-5439EB194B3C</key>
 		<dict>
 			<key>xpos</key>
-			<real>520</real>
+			<real>250</real>
 			<key>ypos</key>
-			<real>500</real>
+			<real>525</real>
 		</dict>
 		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>905</real>
 		</dict>
 		<key>28F2E2F9-493C-4450-B7F2-7B89896713E6</key>
 		<dict>
@@ -1447,49 +1490,49 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1265</real>
 		</dict>
 		<key>2D2C4B1F-AD23-4F61-A7B2-2122216F9F0F</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1145</real>
 		</dict>
 		<key>35496472-08A5-4D85-9E98-65CD6118B500</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>620</real>
+			<real>785</real>
 		</dict>
 		<key>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>1130</real>
+			<real>1295</real>
 		</dict>
 		<key>3B8DC012-8D13-4919-8EB0-AC42C883527E</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>20</real>
+			<real>25</real>
 		</dict>
 		<key>3EAD019C-8C8C-4EFB-84F6-EE99B2242EDA</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>500</real>
+			<real>665</real>
 		</dict>
 		<key>5311DD4E-D8CA-4897-AC1E-B64447F32339</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>260</real>
+			<real>265</real>
 		</dict>
 		<key>6393BD32-E835-4C08-BB48-E69D674DB1C7</key>
 		<dict>
@@ -1498,49 +1541,49 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>930</real>
 			<key>ypos</key>
-			<real>1130</real>
+			<real>1295</real>
 		</dict>
 		<key>63FBFF0E-05C5-47D2-9951-CB86E114264B</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>140</real>
+			<real>145</real>
 		</dict>
 		<key>68BC0595-725B-4DDD-B33F-01C3DE55A709</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1460</real>
+			<real>1625</real>
 		</dict>
 		<key>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>380</real>
+			<real>405</real>
 		</dict>
 		<key>73EAEC22-6299-43A9-AE36-EF1EFD164D0E</key>
 		<dict>
 			<key>xpos</key>
-			<real>250</real>
+			<real>40</real>
 			<key>ypos</key>
-			<real>380</real>
+			<real>405</real>
 		</dict>
 		<key>79817F29-F5D9-400C-9C2E-3289466CAD05</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>620</real>
+			<real>785</real>
 		</dict>
 		<key>7D39E405-629C-4741-BBA3-D87CFC3D419A</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1460</real>
+			<real>1625</real>
 		</dict>
 		<key>7D4A7E97-3F90-4338-95E4-1F539C166F42</key>
 		<dict>
@@ -1549,56 +1592,56 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>1170</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1265</real>
 		</dict>
 		<key>824AADC5-ECD6-4B9A-B01B-901EE6EC2552</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1820</real>
+			<real>1985</real>
 		</dict>
 		<key>9537F6F1-6608-4671-BE03-A3DCD23A06DF</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1505</real>
 		</dict>
 		<key>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</key>
 		<dict>
 			<key>xpos</key>
 			<real>320</real>
 			<key>ypos</key>
-			<real>175</real>
+			<real>180</real>
 		</dict>
 		<key>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1025</real>
 		</dict>
 		<key>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</key>
 		<dict>
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1460</real>
+			<real>1625</real>
 		</dict>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>980</real>
+			<real>1145</real>
 		</dict>
 		<key>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1580</real>
+			<real>1745</real>
 		</dict>
 		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
 		<dict>
@@ -1607,63 +1650,63 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>1005</real>
 			<key>ypos</key>
-			<real>1120</real>
+			<real>1285</real>
 		</dict>
 		<key>D27FE458-78D9-4C16-BF89-7E489D839F6D</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1100</real>
+			<real>1265</real>
 		</dict>
 		<key>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>740</real>
+			<real>905</real>
 		</dict>
 		<key>D75377F6-6B47-4683-B400-224620A75802</key>
 		<dict>
 			<key>xpos</key>
 			<real>430</real>
 			<key>ypos</key>
-			<real>1370</real>
+			<real>1535</real>
 		</dict>
 		<key>DA8908F6-F112-4087-86D4-1B9671DD766C</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1700</real>
+			<real>1865</real>
 		</dict>
 		<key>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1580</real>
+			<real>1745</real>
 		</dict>
 		<key>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>860</real>
+			<real>1145</real>
 		</dict>
 		<key>F798BE22-B717-495C-A1D8-A5B3414DF2B1</key>
 		<dict>
 			<key>xpos</key>
 			<real>1005</real>
 			<key>ypos</key>
-			<real>1460</real>
+			<real>1625</real>
 		</dict>
 		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1340</real>
+			<real>1505</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
@@ -1709,6 +1752,27 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<string>textfield</string>
 			<key>variable</key>
 			<string>unwatch_keyword</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<string>wlb</string>
+				<key>placeholder</key>
+				<string></string>
+				<key>required</key>
+				<false/>
+				<key>trim</key>
+				<true/>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string>Browser Keyword</string>
+			<key>type</key>
+			<string>textfield</string>
+			<key>variable</key>
+			<string>browser_keyword</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1893,6 +1957,8 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<string>prefer_action_url</string>
 		</dict>
 	</array>
+	<key>variablesdontexport</key>
+	<array/>
 	<key>version</key>
 	<string>2024.1</string>
 	<key>webaddress</key>
