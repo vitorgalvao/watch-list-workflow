@@ -44,6 +44,16 @@
 				<key>vitoclose</key>
 				<false/>
 			</dict>
+			<dict>
+				<key>destinationuid</key>
+				<string>4A219552-986C-4E50-B564-FBC45C19D70A</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
 		</array>
 		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
 		<array>
@@ -542,7 +552,7 @@ paths.each { |path| add_local_to_watchlist(path, random_hex, move_paths) }</stri
 				<key>script</key>
 				<string>require "#{Dir.pwd}/watchlist_functions.rb"
 
-add_url_to_watchlist(ARGV[0].strip)</string>
+add_url_to_watchlist(ARGV[0].strip, ENV['add_url_playlist'] == '1')</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
@@ -598,6 +608,21 @@ add_url_to_watchlist(ARGV[0].strip)</string>
 			<string>alfred.workflow.input.keyword</string>
 			<key>uid</key>
 			<string>12FDD660-80AA-4FAF-947F-FCF0214BBD32</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>soundname</key>
+				<string>Morse</string>
+				<key>systemsound</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.playsound</string>
+			<key>uid</key>
+			<string>4A219552-986C-4E50-B564-FBC45C19D70A</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1527,6 +1552,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>ypos</key>
 			<real>665</real>
 		</dict>
+		<key>4A219552-986C-4E50-B564-FBC45C19D70A</key>
+		<dict>
+			<key>xpos</key>
+			<real>520</real>
+			<key>ypos</key>
+			<real>525</real>
+		</dict>
 		<key>5311DD4E-D8CA-4897-AC1E-B64447F32339</key>
 		<dict>
 			<key>xpos</key>
@@ -1888,16 +1920,35 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Move item to top of the list when playing</string>
+				<string>Add new items to the top instead of the bottom</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Play to Top</string>
+			<string>Adding</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
-			<string>top_on_play</string>
+			<string>prepend_new_item</string>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>default</key>
+				<false/>
+				<key>required</key>
+				<false/>
+				<key>text</key>
+				<string>Add full stream playlists</string>
+			</dict>
+			<key>description</key>
+			<string></string>
+			<key>label</key>
+			<string></string>
+			<key>type</key>
+			<string>checkbox</string>
+			<key>variable</key>
+			<string>add_url_playlist</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1907,16 +1958,16 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 				<key>required</key>
 				<false/>
 				<key>text</key>
-				<string>Add new items to the top instead of the bottom</string>
+				<string>Move item to top of the list when playing</string>
 			</dict>
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Add to Top</string>
+			<string>Playing</string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
-			<string>prepend_new_item</string>
+			<string>top_on_play</string>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1931,7 +1982,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>description</key>
 			<string></string>
 			<key>label</key>
-			<string>Trash on Watched</string>
+			<string></string>
 			<key>type</key>
 			<string>checkbox</string>
 			<key>variable</key>
@@ -1957,8 +2008,6 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<string>prefer_action_url</string>
 		</dict>
 	</array>
-	<key>variablesdontexport</key>
-	<array/>
 	<key>version</key>
 	<string>2024.1</string>
 	<key>webaddress</key>
