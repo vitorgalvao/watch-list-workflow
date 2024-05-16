@@ -2,7 +2,6 @@
 
 require 'json'
 require 'open3'
-require 'yaml'
 
 Lists_dir = ENV['lists_dir'].empty? ? ENV['alfred_workflow_data'] : ENV['lists_dir']
 Towatch_list = "#{Lists_dir}/towatch.json".freeze
