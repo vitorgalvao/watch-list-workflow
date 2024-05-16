@@ -25,7 +25,11 @@ Sort your list in different ways with `wls`. Sorting is temporary and does not a
 
 ![Showing sort options](Workflow/images/about/wls.png)
 
-Manually edit the list via the `wle` keyword. Your text editor will open for you to reorder and rename at will. Keep the initial six characters and colon together with your title. Save and quit your editor to apply the changes.
+Add the frontmost browser URL to the list with `wlb`.
+
+![Frontmost browser tab](Workflow/images/about/wlb.png)
+
+Manually edit the list via the `wle` keyword. A Text View will open for you to reorder and rename at will. Keep the initial six characters and colon together with a title. <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> to apply the changes.
 
 ![Edit list](Workflow/images/about/wle.png)
 

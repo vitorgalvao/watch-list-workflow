@@ -2013,7 +2013,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 		</dict>
 	</array>
 	<key>version</key>
-	<string>2024.1</string>
+	<string>2024.2</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/watch-list-workflow/</string>
 </dict>
