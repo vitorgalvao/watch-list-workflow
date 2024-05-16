@@ -1,11 +1,12 @@
 #!/usr/bin/env ruby
 
+require 'fileutils'
 require 'json'
 require 'open3'
 
 Lists_dir = ENV['lists_dir'].empty? ? ENV['alfred_workflow_data'] : ENV['lists_dir']
-Towatch_list = "#{Lists_dir}/towatch.json".freeze
-Watched_list = "#{Lists_dir}/watched.json".freeze
+Lists_file = "#{Lists_dir}/watchlist.json".freeze
+Maximum_watched = Integer(ENV['maximum_watched'])
 Quick_playlist = File.join(ENV['alfred_workflow_cache'], 'quick_playlist.txt')
 Move_when_adding = !ENV['move_on_add'].empty?
 Prepend_new = ENV['prepend_new_item'] == '1'
@@ -13,12 +14,41 @@ Trash_on_watched = ENV['trash_on_watched'] == '1'
 Top_on_play = ENV['top_on_play'] == '1'
 Prefer_action_url = ENV['prefer_action_url'] == '1'
 
+FileUtils.mkpath(Lists_dir) unless Dir.exist?(Lists_dir)
+FileUtils.mkpath(File.dirname(Quick_playlist)) unless Dir.exist?(File.dirname(Quick_playlist))
+File.write(Lists_file, { towatch: [], watched: [] }.to_json) unless File.exist?(Lists_file)
+
+###### Transition code to consolidate lists
+def silent_trash(path)
+  Open3.capture2('osascript', '-l', 'JavaScript', '-e', 'function run(argv) { $.NSFileManager.defaultManager.trashItemAtURLResultingItemURLError($.NSURL.fileURLWithPath(argv[0]), undefined, undefined) }', path).first.strip if File.exist?(path)
+end
+
+Towatch_list = "#{Lists_dir}/towatch.json".freeze
+Watched_list = "#{Lists_dir}/watched.json".freeze
+
+def obj_to_array(items)
+  items.map { |k, v| Hash['id', k].merge!(v) }
+end
+
+if File.exist?(Towatch_list)
+  File.write(Lists_file, JSON.pretty_generate({ "towatch" => obj_to_array(JSON.parse(File.read(Towatch_list)))}))
+  silent_trash(Towatch_list)
+end
+
+if File.exist?(Watched_list)
+  tmp_list_hash = JSON.parse(File.read(Lists_file)) || { "towatch" => [] }
+  tmp_list_hash['watched'] = obj_to_array(JSON.parse(File.read(Watched_list)))
+  File.write(Lists_file, JSON.pretty_generate(tmp_list_hash))
+  silent_trash(Watched_list)
+end
+######
+
 def move_to_dir(path, target_dir)
   path_name = File.basename(path)
   target_path = File.join(target_dir, path_name)
 
   if File.dirname(path) == target_dir
-    puts 'Path is already at target directory'
+    warn 'Path is already at target directory'
   elsif File.exist?(target_path)
     error('Can’t move because another target with the same name already exists')
   else
@@ -29,7 +59,6 @@ def move_to_dir(path, target_dir)
 end
 
 def add_local_to_watchlist(path, id = random_hex, allow_move = true)
-  ensure_data_paths
   require_audiovisual(path)
 
   target_path = Move_when_adding && allow_move ? move_to_dir(path, File.expand_path(ENV['move_on_add'])) : path
@@ -57,57 +86,57 @@ def add_file_to_watchlist(file_path, id = random_hex)
   url = Open3.capture2('mdls', '-raw', '-name', 'kMDItemWhereFroms', file_path).first.split("\n")[1].strip.delete('"') rescue nil
 
   hash = {
-    id => {
-      'type' => 'file',
-      'name' => name,
-      'path' => file_path,
-      'count' => nil,
-      'url' => url,
-      'duration' => {
-        'machine' => duration_machine,
-        'human' => duration_human
-      },
-      'size' => {
-        'machine' => size_machine,
-        'human' => size_human
-      },
-      'ratio' => size_duration_ratio
-    }
+    'id' => id,
+    'type' => 'file',
+    'name' => name,
+    'path' => file_path,
+    'count' => nil,
+    'url' => url,
+    'duration' => {
+      'machine' => duration_machine,
+      'human' => duration_human
+    },
+    'size' => {
+      'machine' => size_machine,
+      'human' => size_human
+    },
+    'ratio' => size_duration_ratio
   }
 
-  add_to_list(hash, Towatch_list)
+  add_to_list(hash, 'towatch')
 end
 
 def add_dir_to_watchlist(dir_path, id = random_hex)
   name = File.basename(dir_path)
 
   hash = {
-    id => {
-      'type' => 'series',
-      'name' => name,
-      'path' => dir_path,
-      'count' => 'counting files…',
-      'url' => nil,
-      'duration' => {
-        'machine' => nil,
-        'human' => 'getting duration…'
-      },
-      'size' => {
-        'machine' => nil,
-        'human' => 'calculating size…'
-      },
-      'ratio' => nil
-    }
+    'id' => id,
+    'type' => 'series',
+    'name' => name,
+    'path' => dir_path,
+    'count' => 'counting files…',
+    'url' => nil,
+    'duration' => {
+      'machine' => nil,
+      'human' => 'getting duration…'
+    },
+    'size' => {
+      'machine' => nil,
+      'human' => 'calculating size…'
+    },
+    'ratio' => nil
   }
 
-  add_to_list(hash, Towatch_list)
+  add_to_list(hash, 'towatch')
   update_series(id)
 end
 
 def update_series(id)
-  list_hash = JSON.parse(File.read(Towatch_list))
+  all_lists = read_lists
+  item_index = find_index(id, 'towatch', all_lists)
+  item = all_lists['towatch'][item_index]
 
-  dir_path = list_hash[id]['path']
+  dir_path = item['path']
   audiovisual_files = list_audiovisual_files(dir_path)
   first_file = audiovisual_files.first
   count = audiovisual_files.count
@@ -120,14 +149,14 @@ def update_series(id)
 
   size_duration_ratio = size_machine / duration_machine
 
-  list_hash[id]['count'] = count
-  list_hash[id]['duration']['machine'] = duration_machine
-  list_hash[id]['duration']['human'] = duration_human
-  list_hash[id]['size']['machine'] = size_machine
-  list_hash[id]['size']['human'] = size_human
-  list_hash[id]['ratio'] = size_duration_ratio
+  item['count'] = count
+  item['duration']['machine'] = duration_machine
+  item['duration']['human'] = duration_human
+  item['size']['machine'] = size_machine
+  item['size']['human'] = size_human
+  item['ratio'] = size_duration_ratio
 
-  File.write(Towatch_list, JSON.pretty_generate(list_hash))
+  write_lists(all_lists)
 end
 
 def add_url_to_watchlist(url, playlist = false, id = random_hex)
@@ -145,34 +174,31 @@ def add_url_to_watchlist(url, playlist = false, id = random_hex)
   duration_human = seconds_to_hms(duration_machine)
 
   hash = {
-    id => {
-      'type' => 'stream',
-      'name' => name,
-      'path' => nil,
-      'count' => count,
-      'url' => url,
-      'duration' => {
-        'machine' => duration_machine,
-        'human' => duration_human
-      },
-      'size' => {
-        'machine' => nil,
-        'human' => nil
-      },
-      'ratio' => nil
-    }
+    'id' => id,
+    'type' => 'stream',
+    'name' => name,
+    'path' => nil,
+    'count' => count,
+    'url' => url,
+    'duration' => {
+      'machine' => duration_machine,
+      'human' => duration_human
+    },
+    'size' => {
+      'machine' => nil,
+      'human' => nil
+    },
+    'ratio' => nil
   }
 
-  add_to_list(hash, Towatch_list)
+  add_to_list(hash, 'towatch')
   notification("Added as stream: “#{name}”")
 end
 
 def display_towatch(sort = nil)
-  ensure_data_paths
+  item_list = read_lists['towatch']
 
-  list_hash = JSON.parse(File.read(Towatch_list)) rescue {}
-
-  if list_hash.empty?
+  if item_list.empty?
     puts({ items: [{ title: 'Play (wlp)', subtitle: 'Nothing to watch', valid: false }] }.to_json)
     exit 0
   end
@@ -182,26 +208,26 @@ def display_towatch(sort = nil)
   hash_to_output =
     case sort
     when 'duration_ascending'
-      list_hash.sort_by { |_id, content| content['duration']['machine'] }
+      item_list.sort_by { |content| content['duration']['machine'] }
     when 'duration_descending'
-      list_hash.sort_by { |_id, content| content['duration']['machine'] }.reverse
+      item_list.sort_by { |content| content['duration']['machine'] }.reverse
     when 'size_ascending'
-      list_hash.sort_by { |_id, content| content['size']['machine'] || Float::INFINITY }
+      item_list.sort_by { |content| content['size']['machine'] || Float::INFINITY }
     when 'size_descending'
-      list_hash.sort_by { |_id, content| content['size']['machine'] || -Float::INFINITY }.reverse
+      item_list.sort_by { |content| content['size']['machine'] || -Float::INFINITY }.reverse
     when 'best_ratio'
-      list_hash.sort_by { |_id, content| content['ratio'] || -Float::INFINITY }.reverse
+      item_list.sort_by { |content| content['ratio'] || -Float::INFINITY }.reverse
     else
-      list_hash
+      item_list
     end
 
-  hash_to_output.each do |id, details|
+  hash_to_output.each do |details|
     item_count = details['count'].nil? ? '' : "(#{details['count']}) 𐄁 "
 
     # Common values
     item = {
       title: details['name'],
-      arg: id,
+      arg: details['id'],
       mods: {},
       action: {}
     }
@@ -237,22 +263,20 @@ def display_towatch(sort = nil)
 end
 
 def display_watched
-  ensure_data_paths
+  item_list = read_lists['watched']
 
-  list_hash = JSON.parse(File.read(Watched_list)) rescue {}
-
-  if list_hash.empty?
+  if item_list.empty?
     puts({ items: [{ title: 'Mark unwatched (wlu)', subtitle: 'You have no unwatched files', valid: false }] }.to_json)
     exit 0
   end
 
   script_filter_items = []
 
-  list_hash.each do |id, details|
+  item_list.each do |details|
     # Common values
     item = {
       title: details['name'],
-      arg: id,
+      arg: details['id'],
       mods: {},
       action: {}
     }
@@ -277,8 +301,11 @@ def display_watched
 end
 
 def play(id, send_to_watched = true)
-  send_to_top(id) if Top_on_play
-  item = JSON.parse(File.read(Towatch_list))[id]
+  switch_list(id, 'towatch', 'towatch') if Top_on_play
+
+  all_lists = read_lists
+  item_index = find_index(id, 'towatch', all_lists)
+  item = all_lists['towatch'][item_index]
 
   case item['type']
   when 'file'
@@ -341,17 +368,14 @@ def play_item(type, path)
 end
 
 def mark_watched(id)
-  item = JSON.parse(File.read(Towatch_list))[id]
-  maximum_watched =
-    begin
-      Integer(ENV['maximum_watched'], 10)
-    rescue ArgumentError
-      20
-    end
+  switch_list(id, 'towatch', 'watched')
 
-  switch_list(id, Towatch_list, Watched_list)
-  list_hash = JSON.parse(File.read(Watched_list))
-  File.write(Watched_list, JSON.pretty_generate(list_hash.first(maximum_watched).to_h))
+  all_lists = read_lists
+  item_index = find_index(id, 'watched', all_lists)
+  item = all_lists['watched'][item_index]
+
+  all_lists['watched'] = all_lists['watched'].first(Maximum_watched)
+  write_lists(all_lists)
 
   if item['type'] == 'stream'
     system('/usr/bin/afplay', '/System/Library/Sounds/Purr.aiff')
@@ -366,28 +390,25 @@ def mark_watched(id)
 
   # If name had to change to send to Trash, update list with new name
   item['trashed_name'] = trashed_name
-  list_hash[id] = item
-  File.write(Watched_list, JSON.pretty_generate(list_hash.first(maximum_watched).to_h))
+  write_lists(all_lists)
 end
 
 def mark_unwatched(id)
-  # Get item info early, before switching lists
-  item = JSON.parse(File.read(Watched_list))[id]
-
-  switch_list(id, Watched_list, Towatch_list)
+  switch_list(id, 'watched', 'towatch')
 
   # Try to recover trashed file
   return unless Trash_on_watched
+
+  all_lists = read_lists
+  item_index = find_index(id, 'towatch', all_lists)
+  item = all_lists['towatch'][item_index]
 
   return if item['type'] == 'stream'
 
   if item['trashed_name']
     trashed_path = File.join(ENV['HOME'], '.Trash', item['trashed_name'])
-
-    list_hash = JSON.parse(File.read(Towatch_list))
     item.delete('trashed_name')
-    list_hash[id] = item
-    File.write(Towatch_list, JSON.pretty_generate(list_hash))
+    write_lists(all_lists)
   else
     trashed_path = File.join(ENV['HOME'], '.Trash', File.basename(item['path']))
   end
@@ -400,7 +421,9 @@ def mark_unwatched(id)
 end
 
 def download_stream(id)
-  item = JSON.parse(File.read(Towatch_list))[id]
+  all_lists = read_lists
+  item_index = find_index(id, 'towatch', all_lists)
+  item = all_lists['towatch'][item_index]
   url = item['url']
 
   mark_watched(id)
@@ -408,30 +431,31 @@ def download_stream(id)
 end
 
 def read_towatch_order
-  print JSON.parse(File.read(Towatch_list)).map { |id, details| "#{id}: #{details['name']}" }.join("\n")
+  print read_lists['towatch'].map { |item| "#{item['id']}: #{item['name']}" }.join("\n")
 end
 
 def write_towatch_order(text_order)
-  origin_hash = JSON.parse(File.read(Towatch_list))  
+  all_lists = read_lists
 
-  target_hash = text_order.strip.split("\n").each_with_object({}) { |item, new_hash|
+  new_items = text_order.strip.split("\n").each_with_object([]) { |item, new_array|
     id_name = item.split(':')
     id = id_name[0].strip
     name = id_name[1..-1].join(':').strip
 
-    item_content_hash = origin_hash[id]
-    abort "Unrecognised id: #{id}" if item_content_hash.nil?
-    item_content_hash['name'] = name
+    item_index = find_index(id, 'towatch', all_lists)
+    item = all_lists['towatch'][item_index]
 
-    new_hash.store(id, item_content_hash)
+    abort "Unrecognised id: #{id}" if item_index.nil?
+    item['name'] = name
+
+    new_array.push(item)
   }
 
-  File.write(Towatch_list, JSON.pretty_generate(target_hash))
+  all_lists['towatch'] = new_items
+  write_lists(all_lists)
 end
 
 def verify_quick_playlist(minutes_threshold = 3)
-  ensure_data_paths
-
   return false unless File.exist?(Quick_playlist)
 
   if (Time.now - File.mtime(Quick_playlist)) / 60 > minutes_threshold
@@ -459,7 +483,8 @@ def play_quick_playlist
 end
 
 def random_hex
-  '%06x' % (rand * 0xffffff)
+  require 'securerandom'
+  SecureRandom.hex
 end
 
 def colons_to_seconds(duration_colons)
@@ -505,52 +530,41 @@ def require_audiovisual(path)
   end
 end
 
-def add_to_list(hash, list)
-  Prepend_new ? prepend_to_list(hash, list) : append_to_list(hash, list)
+def read_lists(lists_file = Lists_file)
+  JSON.parse(File.read(lists_file))
 end
 
-def prepend_to_list(input_hash, list)
-  list_hash = JSON.parse(File.read(list)) rescue {}
-  target_json = JSON.pretty_generate(input_hash.merge(list_hash))
-  File.write(list, target_json)
+def write_lists(new_lists, lists_file = Lists_file)
+  File.write(lists_file, JSON.pretty_generate(new_lists))
 end
 
-def append_to_list(input_hash, list)
-  list_hash = JSON.parse(File.read(list)) rescue {}
-  target_json = JSON.pretty_generate(list_hash.merge(input_hash))
-  File.write(list, target_json)
+def add_to_list(new_hash, list, prepending = Prepend_new)
+  all_lists = read_lists
+  all_lists[list] = prepending ? [new_hash].concat(all_lists[list]) : all_lists[list].concat([new_hash])
+  write_lists(all_lists)
+end
+
+def find_index(id, list, all_lists)
+  all_lists[list].index { |item| item['id'] == id }
 end
 
 def delete_from_list(id, list)
-  list_hash = JSON.parse(File.read(list))
-  list_hash.delete(id)
-  target_json = JSON.pretty_generate(list_hash)
-  File.write(list, target_json)
+  all_lists = read_lists
+  item_index = find_index(id, list, all_lists)
+  item = all_lists[list][item_index]
+  all_lists[list].delete(item)
+  write_lists(all_lists)
 end
 
 def switch_list(id, origin_list, target_list)
-  ensure_data_paths
+  all_lists = read_lists
+  item_index = find_index(id, origin_list, all_lists)
 
-  id_hash = { id => JSON.parse(File.read(origin_list))[id] }
+  abort 'Item no longer exists' if item_index.nil? # Detect if an item no longer exists before trying to move. Fix for cases where the same item is chosen a second time before having finished playing.
 
-  abort 'Item no longer exists' if id_hash.values.first.nil? # Detect if an item no longer exists before trying to move. Fix for cases where the same item is chosen a second time before having finished playing.
-
+  item = all_lists[origin_list][item_index]
   delete_from_list(id, origin_list)
-  prepend_to_list(id_hash, target_list)
-end
-
-def send_to_top(id)
-  switch_list(id, Towatch_list, Towatch_list)
-end
-
-def ensure_data_paths
-  require 'fileutils'
-
-  Dir.mkdir(Lists_dir) unless Dir.exist?(File.expand_path(Lists_dir))
-  FileUtils.touch(Towatch_list) unless File.exist?(Towatch_list)
-  FileUtils.touch(Watched_list) unless File.exist?(Watched_list)
-
-  Dir.mkdir(ENV['alfred_workflow_cache']) unless Dir.exist?(ENV['alfred_workflow_cache'])
+  add_to_list(item, target_list, true)
 end
 
 def trash(path)
