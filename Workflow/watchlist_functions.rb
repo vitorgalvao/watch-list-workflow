@@ -484,7 +484,7 @@ end
 
 def random_hex
   require 'securerandom'
-  SecureRandom.hex
+  SecureRandom.hex(6)
 end
 
 def colons_to_seconds(duration_colons)
