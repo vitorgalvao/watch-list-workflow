@@ -55,6 +55,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>25A8384D-6E03-4FCF-B33B-D971474D9316</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>FA2EEBE1-6F37-4475-BC3F-C117FC69354D</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
 		<array>
 			<dict>
@@ -279,6 +292,19 @@
 				<false/>
 			</dict>
 		</array>
+		<key>C18CE1BF-E359-43BE-8524-22D8CC0FDE31</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C929975A-3B90-474A-BA08-595EAB51A9B2</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<array/>
 		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
@@ -327,6 +353,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>9537F6F1-6608-4671-BE03-A3DCD23A06DF</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>DC7B40F7-EC70-4D1B-8D70-60268CA3D9A8</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C18CE1BF-E359-43BE-8524-22D8CC0FDE31</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -415,6 +454,19 @@
 				<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
 				<key>modifiers</key>
 				<integer>262144</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>FA2EEBE1-6F37-4475-BC3F-C117FC69354D</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</string>
+				<key>modifiers</key>
+				<integer>0</integer>
 				<key>modifiersubtext</key>
 				<string></string>
 				<key>vitoclose</key>
@@ -716,6 +768,21 @@ print id</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_and_play_stream</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -739,21 +806,6 @@ print id</string>
 			<string>26626E87-515C-4312-87F7-4F604EBBF2F9</string>
 			<key>version</key>
 			<integer>2</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
-				<key>availableviaurlhandler</key>
-				<false/>
-				<key>triggerid</key>
-				<string>add_and_play_stream</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.trigger.external</string>
-			<key>uid</key>
-			<string>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</string>
-			<key>version</key>
-			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -887,6 +939,21 @@ display_towatch(ENV['sort_order'])</string>
 			<string>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>mark_watched</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>DC7B40F7-EC70-4D1B-8D70-60268CA3D9A8</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1035,6 +1102,14 @@ function run(argv) {
 			<string>alfred.workflow.utility.conditional</string>
 			<key>uid</key>
 			<string>6393BD32-E835-4C08-BB48-E69D674DB1C7</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>C18CE1BF-E359-43BE-8524-22D8CC0FDE31</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1201,29 +1276,6 @@ add_to_quick_playlist(ARGV[0])</string>
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>2</integer>
-				<key>keyword</key>
-				<string>{var:edit_keyword}</string>
-				<key>skipuniversalaction</key>
-				<true/>
-				<key>subtext</key>
-				<string>Reorder and rename watchlist items</string>
-				<key>text</key>
-				<string>Edit</string>
-				<key>withspace</key>
-				<false/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -1270,6 +1322,29 @@ read_towatch_order</string>
 			<string>7D39E405-629C-4741-BBA3-D87CFC3D419A</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>2</integer>
+				<key>keyword</key>
+				<string>{var:edit_keyword}</string>
+				<key>skipuniversalaction</key>
+				<true/>
+				<key>subtext</key>
+				<string>Reorder and rename watchlist items</string>
+				<key>text</key>
+				<string>Edit</string>
+				<key>withspace</key>
+				<false/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>68BC0595-725B-4DDD-B33F-01C3DE55A709</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -1367,6 +1442,29 @@ mark_unwatched(ARGV[0])</string>
 			<string>alfred.workflow.action.openurl</string>
 			<key>uid</key>
 			<string>DA8908F6-F112-4087-86D4-1B9671DD766C</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>mark_watched</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>25A8384D-6E03-4FCF-B33B-D971474D9316</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>type</key>
+			<string>alfred.workflow.utility.junction</string>
+			<key>uid</key>
+			<string>FA2EEBE1-6F37-4475-BC3F-C117FC69354D</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1498,6 +1596,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<real>250</real>
 			<key>ypos</key>
 			<real>525</real>
+		</dict>
+		<key>25A8384D-6E03-4FCF-B33B-D971474D9316</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>1865</real>
 		</dict>
 		<key>26626E87-515C-4312-87F7-4F604EBBF2F9</key>
 		<dict>
@@ -1661,6 +1766,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>ypos</key>
 			<real>1625</real>
 		</dict>
+		<key>C18CE1BF-E359-43BE-8524-22D8CC0FDE31</key>
+		<dict>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>1295</real>
+		</dict>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<dict>
 			<key>xpos</key>
@@ -1712,6 +1824,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>ypos</key>
 			<real>1865</real>
 		</dict>
+		<key>DC7B40F7-EC70-4D1B-8D70-60268CA3D9A8</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>1265</real>
+		</dict>
 		<key>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</key>
 		<dict>
 			<key>xpos</key>
@@ -1732,6 +1851,13 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<real>1005</real>
 			<key>ypos</key>
 			<real>1625</real>
+		</dict>
+		<key>FA2EEBE1-6F37-4475-BC3F-C117FC69354D</key>
+		<dict>
+			<key>xpos</key>
+			<real>290</real>
+			<key>ypos</key>
+			<real>1895</real>
 		</dict>
 		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
 		<dict>
