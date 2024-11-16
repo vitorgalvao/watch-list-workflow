@@ -18,31 +18,6 @@ FileUtils.mkpath(Lists_dir) unless Dir.exist?(Lists_dir)
 FileUtils.mkpath(File.dirname(Quick_playlist)) unless Dir.exist?(File.dirname(Quick_playlist))
 File.write(Lists_file, { towatch: [], watched: [] }.to_json) unless File.exist?(Lists_file)
 
-###### Transition code to consolidate lists
-def silent_trash(path)
-  Open3.capture2('osascript', '-l', 'JavaScript', '-e', 'function run(argv) { $.NSFileManager.defaultManager.trashItemAtURLResultingItemURLError($.NSURL.fileURLWithPath(argv[0]), undefined, undefined) }', path).first.strip if File.exist?(path)
-end
-
-Towatch_list = "#{Lists_dir}/towatch.json".freeze
-Watched_list = "#{Lists_dir}/watched.json".freeze
-
-def obj_to_array(items)
-  items.map { |k, v| Hash['id', k].merge!(v) }
-end
-
-if File.exist?(Towatch_list)
-  File.write(Lists_file, JSON.pretty_generate({ "towatch" => obj_to_array(JSON.parse(File.read(Towatch_list)))}))
-  silent_trash(Towatch_list)
-end
-
-if File.exist?(Watched_list)
-  tmp_list_hash = JSON.parse(File.read(Lists_file)) || { "towatch" => [] }
-  tmp_list_hash['watched'] = obj_to_array(JSON.parse(File.read(Watched_list)))
-  File.write(Lists_file, JSON.pretty_generate(tmp_list_hash))
-  silent_trash(Watched_list)
-end
-######
-
 def move_to_dir(path, target_dir)
   path_name = File.basename(path)
   target_path = File.join(target_dir, path_name)
