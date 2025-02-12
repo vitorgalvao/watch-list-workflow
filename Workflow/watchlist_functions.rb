@@ -137,12 +137,12 @@ end
 def add_url_to_watchlist(url, playlist = false, id = random_hex)
   playlist_flag = playlist ? '--yes-playlist' : '--no-playlist'
 
-  all_names = Open3.capture2('yt-dlp', '--get-title', playlist_flag, url).first.split("\n")
+  all_names = Open3.capture2('yt-dlp', '--print', 'title', playlist_flag, url).first.split("\n")
   error "Could not add url as stream: #{url}" if all_names.empty?
   # If playlist, get the playlist name instead of the the name of the first item
-  name = all_names.count > 1 ? Open3.capture2('yt-dlp', '--yes-playlist', '--get-filename', '--output', '%(playlist)s', url).first.split("\n").first : all_names[0]
+  name = all_names.count > 1 ? Open3.capture2('yt-dlp', '--yes-playlist', '--print', 'filename', '--output', '%(playlist)s', url).first.split("\n").first : all_names[0]
 
-  durations = Open3.capture2('yt-dlp', '--get-duration', playlist_flag, url).first.split("\n")
+  durations = Open3.capture2('yt-dlp', '--print', 'duration', playlist_flag, url).first.split("\n")
   count = durations.count > 1 ? durations.count : nil
 
   duration_machine = durations.map { |d| colons_to_seconds(d) }.inject(0, :+)
