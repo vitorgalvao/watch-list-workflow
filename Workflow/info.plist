@@ -266,6 +266,19 @@
 		</array>
 		<key>AFB3D5CC-1B83-4675-91D8-770B0B2B7576</key>
 		<array/>
+		<key>B133591A-A7AB-43E3-9AE6-F5A52BF77A83</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</key>
 		<array>
 			<dict>
@@ -578,6 +591,21 @@ paths.each { |path| add_local_to_watchlist(path, random_hex, move_paths) }</stri
 			<string>alfred.workflow.trigger.external</string>
 			<key>uid</key>
 			<string>5311DD4E-D8CA-4897-AC1E-B64447F32339</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>availableviaurlhandler</key>
+				<false/>
+				<key>triggerid</key>
+				<string>add_stream_to_watchlist</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.external</string>
+			<key>uid</key>
+			<string>B133591A-A7AB-43E3-9AE6-F5A52BF77A83</string>
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
@@ -1534,35 +1562,35 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>525</real>
+			<real>645</real>
 		</dict>
 		<key>1A72974B-3830-4919-A743-5EDC252A6417</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1385</real>
+			<real>1505</real>
 		</dict>
 		<key>1C0E08EA-ED61-4255-B50B-2EC1547C85F7</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1025</real>
+			<real>1145</real>
 		</dict>
 		<key>222FE78E-6C32-4D15-BD10-5439EB194B3C</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>525</real>
+			<real>645</real>
 		</dict>
 		<key>25A8384D-6E03-4FCF-B33B-D971474D9316</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1865</real>
+			<real>1985</real>
 		</dict>
 		<key>28F2E2F9-493C-4450-B7F2-7B89896713E6</key>
 		<dict>
@@ -1573,28 +1601,28 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1385</real>
 		</dict>
 		<key>2D2C4B1F-AD23-4F61-A7B2-2122216F9F0F</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1265</real>
 		</dict>
 		<key>35496472-08A5-4D85-9E98-65CD6118B500</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>905</real>
 		</dict>
 		<key>3B3F6F64-8D2C-4E25-8E05-FB9F49773023</key>
 		<dict>
 			<key>xpos</key>
 			<real>690</real>
 			<key>ypos</key>
-			<real>1295</real>
+			<real>1415</real>
 		</dict>
 		<key>3B8DC012-8D13-4919-8EB0-AC42C883527E</key>
 		<dict>
@@ -1608,14 +1636,14 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>665</real>
+			<real>785</real>
 		</dict>
 		<key>4A219552-986C-4E50-B564-FBC45C19D70A</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>525</real>
+			<real>645</real>
 		</dict>
 		<key>5311DD4E-D8CA-4897-AC1E-B64447F32339</key>
 		<dict>
@@ -1631,7 +1659,7 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>930</real>
 			<key>ypos</key>
-			<real>1295</real>
+			<real>1415</real>
 		</dict>
 		<key>63FBFF0E-05C5-47D2-9951-CB86E114264B</key>
 		<dict>
@@ -1645,35 +1673,35 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1625</real>
+			<real>1745</real>
 		</dict>
 		<key>6DBE8BF2-3AA2-46A3-A028-739C1E71A985</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>405</real>
+			<real>525</real>
 		</dict>
 		<key>73EAEC22-6299-43A9-AE36-EF1EFD164D0E</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>405</real>
+			<real>525</real>
 		</dict>
 		<key>79817F29-F5D9-400C-9C2E-3289466CAD05</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>785</real>
+			<real>905</real>
 		</dict>
 		<key>7D39E405-629C-4741-BBA3-D87CFC3D419A</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1625</real>
+			<real>1745</real>
 		</dict>
 		<key>7D4A7E97-3F90-4338-95E4-1F539C166F42</key>
 		<dict>
@@ -1682,21 +1710,21 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>1170</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1385</real>
 		</dict>
 		<key>824AADC5-ECD6-4B9A-B01B-901EE6EC2552</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1985</real>
+			<real>2105</real>
 		</dict>
 		<key>9537F6F1-6608-4671-BE03-A3DCD23A06DF</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1505</real>
+			<real>1625</real>
 		</dict>
 		<key>A7A5F830-E97E-4EEE-83FB-60EDAA447A04</key>
 		<dict>
@@ -1710,35 +1738,42 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1025</real>
+			<real>1145</real>
+		</dict>
+		<key>B133591A-A7AB-43E3-9AE6-F5A52BF77A83</key>
+		<dict>
+			<key>xpos</key>
+			<real>40</real>
+			<key>ypos</key>
+			<real>405</real>
 		</dict>
 		<key>BDCCD42B-BB98-4032-A4A8-261C187CFCDE</key>
 		<dict>
 			<key>xpos</key>
 			<real>770</real>
 			<key>ypos</key>
-			<real>1625</real>
+			<real>1745</real>
 		</dict>
 		<key>C18CE1BF-E359-43BE-8524-22D8CC0FDE31</key>
 		<dict>
 			<key>xpos</key>
 			<real>290</real>
 			<key>ypos</key>
-			<real>1295</real>
+			<real>1415</real>
 		</dict>
 		<key>C929975A-3B90-474A-BA08-595EAB51A9B2</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1265</real>
 		</dict>
 		<key>C92FF9E0-CBC7-4421-9B75-4B8C557EB4DD</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1865</real>
 		</dict>
 		<key>D1B310EB-14FF-4B99-80D8-1AA17903B526</key>
 		<dict>
@@ -1747,77 +1782,77 @@ All media players are supported, but not all are able to play streams. [mpv](htt
 			<key>xpos</key>
 			<real>1005</real>
 			<key>ypos</key>
-			<real>1285</real>
+			<real>1405</real>
 		</dict>
 		<key>D27FE458-78D9-4C16-BF89-7E489D839F6D</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1385</real>
 		</dict>
 		<key>D69DD7A5-07C5-46B2-920C-B06AF76BDC48</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>905</real>
+			<real>1025</real>
 		</dict>
 		<key>D75377F6-6B47-4683-B400-224620A75802</key>
 		<dict>
 			<key>xpos</key>
 			<real>430</real>
 			<key>ypos</key>
-			<real>1535</real>
+			<real>1655</real>
 		</dict>
 		<key>DA8908F6-F112-4087-86D4-1B9671DD766C</key>
 		<dict>
 			<key>xpos</key>
 			<real>520</real>
 			<key>ypos</key>
-			<real>1865</real>
+			<real>1985</real>
 		</dict>
 		<key>DC7B40F7-EC70-4D1B-8D70-60268CA3D9A8</key>
 		<dict>
 			<key>xpos</key>
 			<real>40</real>
 			<key>ypos</key>
-			<real>1265</real>
+			<real>1385</real>
 		</dict>
 		<key>E75EF64B-CE9C-4789-8FCC-8095D43D1FEA</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1745</real>
+			<real>1865</real>
 		</dict>
 		<key>E8F9509C-843D-40C8-B5F1-6B8FC692A18C</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1145</real>
+			<real>1265</real>
 		</dict>
 		<key>F798BE22-B717-495C-A1D8-A5B3414DF2B1</key>
 		<dict>
 			<key>xpos</key>
 			<real>1005</real>
 			<key>ypos</key>
-			<real>1625</real>
+			<real>1745</real>
 		</dict>
 		<key>FA2EEBE1-6F37-4475-BC3F-C117FC69354D</key>
 		<dict>
 			<key>xpos</key>
 			<real>290</real>
 			<key>ypos</key>
-			<real>1895</real>
+			<real>2015</real>
 		</dict>
 		<key>FA9B96C8-46F8-4275-A082-2D7CFB7B7867</key>
 		<dict>
 			<key>xpos</key>
 			<real>250</real>
 			<key>ypos</key>
-			<real>1505</real>
+			<real>1625</real>
 		</dict>
 	</dict>
 	<key>userconfigurationconfig</key>
