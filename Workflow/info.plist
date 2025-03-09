@@ -805,7 +805,7 @@ print id</string>
 				<key>script</key>
 				<string>require "#{Dir.pwd}/watchlist_functions.rb"
 
-play(ARGV[0]) unless play_quick_playlist</string>
+play_quick_playlist || play(ARGV[0])</string>
 				<key>scriptargtype</key>
 				<integer>1</integer>
 				<key>scriptfile</key>
