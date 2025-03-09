@@ -297,7 +297,7 @@ def play(id)
       abort 'Marking as watched since the directory no longer exists'
     end
 
-    first_file = list_audiovisual_files(item['path']).first
+    first_file = list_audiovisual_files(item['path'], true)
     return unless play_item('file', first_file)
 
     # If there are no more audiovisual files in the directory in addition to the one we just watched, trash the whole directory, else trash just the watched file
@@ -484,9 +484,10 @@ def audiovisual_file?(path)
   Open3.capture2('mdls', '-name', 'kMDItemContentTypeTree', path).first.include?('public.audiovisual-content')
 end
 
-def list_audiovisual_files(dir_path)
-  escaped_path = dir_path.gsub(/([\*\?\[\]{}\\])/, '\\\\\1')
-  Dir.glob("#{escaped_path}/**/*").map(&:downcase).sort.select { |e| audiovisual_file?(e) }
+def list_audiovisual_files(dir_path, only_first = false)
+  path_list = Dir.glob(File.join(dir_path, '**', '*')).select { |e| File.file?(e) }.sort_by(&:downcase)
+  return path_list.find { |e| audiovisual_file?(e) } if only_first
+  path_list.select { |e| audiovisual_file?(e) }
 end
 
 def require_audiovisual(path)
@@ -495,7 +496,7 @@ def require_audiovisual(path)
 
     error('Is not an audiovisual file')
   elsif File.directory?(path)
-    return unless list_audiovisual_files(path).first.nil?
+    return unless list_audiovisual_files(path, true).nil?
 
     error('Directory has no audiovisual content')
   else
