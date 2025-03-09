@@ -320,21 +320,21 @@ def play_item(type, path)
     mpv_binary = Open3.capture2('/usr/bin/which', 'mpv').first.chomp
     return [mpv_binary, '--no-terminal'] if File.executable?(mpv_binary)
 
-    mpv_app = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'io.mpv').first.strip.split("\n").last
-    return [mpv_app + '/Contents/MacOS/mpv', '--no-terminal'] if mpv_app
+    mpv_app = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'io.mpv').first.chomp.split("\n").last
+    return ["#{mpv_app}/Contents/MacOS/mpv", '--no-terminal'] if mpv_app
 
-    iina = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'com.colliderli.iina').first.strip.split("\n").last
-    return iina + '/Contents/MacOS/IINA' if iina
+    iina = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'com.colliderli.iina').first.chomp.split("\n").last
+    return ["#{iina}/Contents/MacOS/IINA"] if iina
 
-    vlc = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'org.videolan.vlc').first.strip.split("\n").last
-    return vlc + '/Contents/MacOS/VLC' if vlc
+    vlc = Open3.capture2('mdfind', 'kMDItemCFBundleIdentifier', '=', 'org.videolan.vlc').first.chomp.split("\n").last
+    return ["#{vlc}/Contents/MacOS/VLC"] if vlc
 
-    'other'
+    ['open', '-W']
   }.call
 
-  error('To play a stream you need mpv, iina, or vlc') if video_player == 'other' && type == 'stream'
+  error('To play a stream you need mpv, iina, or vlc') if video_player.first == 'open' && type == 'stream'
 
-  video_player == 'other' ? system('open', '-W', path) : Open3.capture2(*video_player, path)[1].success?
+  Open3.capture2(*video_player, path)[1].success?
 end
 
 def mark_watched(id)
