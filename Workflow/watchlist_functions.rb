@@ -275,7 +275,7 @@ def display_watched
   puts({ items: script_filter_items }.to_json)
 end
 
-def play(id, send_to_watched = true)
+def play(id)
   switch_list(id, 'towatch', 'towatch') if Top_on_play
 
   all_lists = read_lists
@@ -286,25 +286,23 @@ def play(id, send_to_watched = true)
   when 'file'
     return unless play_item('file', item['path'])
 
-    mark_watched(id) if send_to_watched == true
+    mark_watched(id)
   when 'stream'
     return unless play_item('stream', item['url'])
 
-    mark_watched(id) if send_to_watched == true
+    mark_watched(id)
   when 'series'
-    if !File.exist?(item['path']) && send_to_watched == true
+    unless File.exist?(item['path'])
       mark_watched(id)
       abort 'Marking as watched since the directory no longer exists'
     end
 
     first_file = list_audiovisual_files(item['path']).first
-
     return unless play_item('file', first_file)
-    return if send_to_watched == false
 
     # If there are no more audiovisual files in the directory in addition to the one we just watched, trash the whole directory, else trash just the watched file
     if list_audiovisual_files(item['path']).reject { |e| e == first_file }.empty?
-      mark_watched(id) if send_to_watched == true
+      mark_watched(id)
     else
       trash(first_file) if Trash_on_watched
       update_series(id)
