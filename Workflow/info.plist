@@ -1439,7 +1439,7 @@ mark_unwatched(ARGV[0])</string>
 				<key>availableviaurlhandler</key>
 				<false/>
 				<key>triggerid</key>
-				<string>mark_watched</string>
+				<string>mark_unwatched</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.external</string>
