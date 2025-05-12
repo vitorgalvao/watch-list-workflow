@@ -1009,21 +1009,18 @@ end</string>
 				<key>escaping</key>
 				<integer>102</integer>
 				<key>script</key>
-				<string>function status(download_media_installed, download_url) {
+				<string>function status(isInstalled) {
   return JSON.stringify({ alfredworkflow: {
-    variables: { download_media_installed: download_media_installed },
-    arg: download_url
+    variables: { download_media_installed: isInstalled }
   }})
 }
 
 function run(argv) {
-  const url = argv[0]
-
   try {
-    Application("com.runningwithcrayons.Alfred").runTrigger("download_video", { inWorkflow: "com.vitorgalvao.alfred.downloadmedia", withArgument: url })
-    return status(true, url)
+    Application("com.runningwithcrayons.Alfred").runTrigger("download_video", { inWorkflow: "com.vitorgalvao.alfred.downloadmedia", withArgument: argv[0] })
+    return status(true)
   } catch {
-    return status(false, url)
+    return status(false)
   }
 }</string>
 				<key>scriptargtype</key>
