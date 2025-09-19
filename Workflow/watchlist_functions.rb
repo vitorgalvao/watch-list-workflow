@@ -462,7 +462,7 @@ def colons_to_seconds(duration_colons)
 end
 
 def duration_in_seconds(file_path)
-  Open3.capture2('ffprobe', '-loglevel', 'quiet', '-output_format', 'csv=p=0', '-show_entries', 'format=duration', file_path).first.to_i
+  Open3.capture2('ffprobe', '-loglevel', 'quiet', '-output_format', 'compact=p=0:nokey=1', '-show_entries', 'format=duration', file_path).first.to_i
 end
 
 def seconds_to_hms(total_seconds)
