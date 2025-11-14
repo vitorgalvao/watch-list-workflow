@@ -19,7 +19,7 @@ Search through and play items from your list via the `wlp` keyword.
 * <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Download stream (requires [Download Media](https://alfred.app/workflows/vitor/download-media/)) or rescan folder for audiovisual files.
 * <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Mark as watched without playing.
 * <kbd>⇧</kbd><kbd>↩&#xFE0E;</kbd> Add to temporary playlist. Repeat for all desired items then <kbd>↩&#xFE0E;</kbd> to play in order. An unplayed playlist resets after a few minutes.
-* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>) Quick Look files and streams.
+* <kbd>⌘</kbd><kbd>Y</kbd> [Quick Look](https://www.alfredapp.com/help/features/previews/) files and streams.
 
 Sort your list in different ways with `wls`. Sorting is temporary and does not affect the main list’s order.
 
@@ -41,7 +41,7 @@ If the item has an origin URL (shown in the subtitle):
 
 * <kbd>⌘</kbd><kbd>↩&#xFE0E;</kbd> Open URL in a web browser.
 * <kbd>⌥</kbd><kbd>↩&#xFE0E;</kbd> Copy to the clipboard.
-* <kbd>⌘</kbd><kbd>Y</kbd> (or tap <kbd>⇧</kbd>) Quick Look.
+* <kbd>⌘</kbd><kbd>Y</kbd> [Quick Look](https://www.alfredapp.com/help/features/previews/).
 
 ### Subtitle reference:
 
@@ -74,4 +74,4 @@ There are three types of item: file, series, and stream. Each result has its nam
 
 ## Supported Players
 
-All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://lhc70000.github.io/iina/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as played and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
+All media players are supported, but not all are able to play streams. [mpv](http://mpv.io/), [IINA](https://iina.io/), and [VLC](http://www.videolan.org/vlc/index.html) are directly supported. With those, an item is not marked as watched if playback exits with a non-zero code. Take advantage of that to, for example, control when an item is marked as played and trashed. Disable the trashing behaviour entirely in the [Workflow’s Configuration](https://www.alfredapp.com/help/workflows/user-configuration/).
